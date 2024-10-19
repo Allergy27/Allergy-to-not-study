@@ -1,6 +1,6 @@
 # ⭐哈尔滨学院第十四届程序设计竞赛（低年级组）正式赛
----  
-**前言:**  
+---
+**前言:**
 
 手速场，全是水题，有点含金量的是D题，含金量不高，鉴于python简练，我贴出python的题解~（我在D题给了一个C/C++的解法）~
 
@@ -15,7 +15,7 @@
 ---
 - **题目分析**：
   - 分成两部分，求前后区间和，想到用前缀和求区间的和:（蓝色部分是原数组，绿色是我们求得的前缀和(前缀和就是从索引0一直求到这个位置的和)
-  ![](https://gitee.com/deer-b/picture/raw/master/img/20231122201402.png)  
+  ![](https://gitee.com/deer-b/picture/raw/master/img/20231122201402.png)
   不难注意到，[l,r]区间和就是前缀和数组S~r~-S~l-1~
   - 例如我们要求这段区间内的和:
   ![](https://gitee.com/deer-b/picture/raw/master/img/20231122201818.png)
@@ -28,7 +28,7 @@
   ![](https://gitee.com/deer-b/picture/raw/master/img/20231122202333.png)
   - 于是我们只让左箭头一直向右移动就能轻松枚举分成左右两半的所有情况了:
   ![](https://gitee.com/deer-b/picture/raw/master/img/20231122202803.png)
-- **代码实现**：  
+- **代码实现**：
   - __C++:__
     ```C++
       void solve() {
