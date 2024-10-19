@@ -1,1 +1,0 @@
-{"name":"Local: Hello_world","url":"d:\\Craft\\Cpp\\Hello_world.cpp","tests":[{"id":1729250420796,"input":"3 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\Hello_world.cpp","group":"local","local":true}

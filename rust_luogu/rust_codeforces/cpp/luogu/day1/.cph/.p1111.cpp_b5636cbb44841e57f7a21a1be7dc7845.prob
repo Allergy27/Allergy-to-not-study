@@ -1,1 +1,0 @@
-{"name":"Local: p1111","url":"d:\\Craft\\Cpp\\luogu\\day1\\p1111.cpp","tests":[{"id":1726963805357,"input":"4 4\n1 2 6\n1 3 4\n1 4 5\n4 2 3","output":"54"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\luogu\\day1\\p1111.cpp","group":"local","local":true}

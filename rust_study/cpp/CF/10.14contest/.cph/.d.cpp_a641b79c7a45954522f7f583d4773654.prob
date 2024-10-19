@@ -1,1 +1,0 @@
-{"name":"Local: d","url":"d:\\Craft\\Cpp\\CF\\10.14contest\\d.cpp","tests":[{"id":1728924188571,"input":"10 5\n0 1 0 2 0 -3 0 -4 0 -5\n","output":"3\n"},{"id":1728924196765,"input":"9 3\n0 0 1 0 2 -3 -2 -2 1\n","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\CF\\10.14contest\\d.cpp","group":"local","local":true}

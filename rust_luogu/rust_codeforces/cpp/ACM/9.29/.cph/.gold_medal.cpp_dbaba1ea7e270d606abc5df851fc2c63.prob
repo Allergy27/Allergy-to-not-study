@@ -1,1 +1,0 @@
-{"name":"Local: gold_medal","url":"d:\\Craft\\Cpp\\ACM\\9.29\\gold_medal.cpp","tests":[{"id":1727606497903,"input":"2\n3 1\n1 1 1\n1\n2 1\n300 100\n1000\n","output":"91\n1400\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\ACM\\9.29\\gold_medal.cpp","group":"local","local":true}

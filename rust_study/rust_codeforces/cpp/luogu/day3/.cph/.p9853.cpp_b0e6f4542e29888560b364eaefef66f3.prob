@@ -1,1 +1,0 @@
-{"name":"Local: p9853","url":"d:\\Craft\\Cpp\\luogu\\day3\\p9853.cpp","tests":[{"id":1727195676209,"input":"5 3\n5x-2=13\n8x+5=45\n4x-12=8\n-2x+10=4\n3x-7=2\n1 3\n1 5\n3 6","output":"1\n2\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\luogu\\day3\\p9853.cpp","group":"local","local":true}

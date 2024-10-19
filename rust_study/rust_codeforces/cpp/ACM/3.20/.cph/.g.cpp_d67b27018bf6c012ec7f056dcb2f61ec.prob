@@ -1,1 +1,0 @@
-{"name":"Local: g","url":"d:\\Craft\\Cpp\\ACM\\3.20\\g.cpp","tests":[{"id":1711642791669,"input":"1\n4\nelectronic themotans\nelectronic carlasdreams\npop themotans\npop irinarimes","output":"0\n0\n4\n3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\ACM\\3.20\\g.cpp","group":"local","local":true}

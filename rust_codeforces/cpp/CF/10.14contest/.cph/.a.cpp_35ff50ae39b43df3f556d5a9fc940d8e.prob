@@ -1,1 +1,0 @@
-{"name":"Local: a","url":"d:\\Craft\\Cpp\\CF\\10.14contest\\a.cpp","tests":[{"id":1728916771405,"input":"3\nGARAGE\nGARAGEFORSALE\nABCDE\nAABCD\nTRAINING\nDRAINING\n","output":"14\n10\n16\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\CF\\10.14contest\\a.cpp","group":"local","local":true}

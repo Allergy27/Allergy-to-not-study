@@ -1,1 +1,0 @@
-{"name":"Local: test","url":"d:\\Craft\\Cpp\\CF\\test.cpp","tests":[{"id":1728303404474,"input":"8\n3 1 4 5 9 2 6 8\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\CF\\test.cpp","group":"local","local":true}
