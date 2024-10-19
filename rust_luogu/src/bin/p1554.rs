@@ -10,7 +10,7 @@ fn input() -> String {
 fn main() {
     let t=1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_|solve());
+    (0..t).for_each(|_|solve());
 }
 fn solve() {
     let input = input();
@@ -19,7 +19,7 @@ fn solve() {
         input.next().unwrap().parse().unwrap(),
         input.next().unwrap().parse().unwrap(),
     );
-    let mut qwq=vec![0;10];
+    let mut qwq=[0; 10];
     for mut num in a..=b{
         while num>0{
             qwq[(num%10)as usize]+=1;

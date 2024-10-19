@@ -9,9 +9,10 @@ fn main() {
         println!("{}", i)
     }
 }
-fn qsort<T: Ord + Clone + Copy>(xs: &mut Vec<T>) -> Vec<T> {
+
+fn qsort<T: Ord + Clone + Copy>(xs: &mut [T]) -> Vec<T> {
     if xs.len() <= 1 { return xs.to_vec(); }
-    let small = qsort(&mut xs[1..].into_iter().filter_map(|x|if x <= &xs[0]{ Some(*x) }else{ None }).collect());
-    let big = qsort(&mut xs[1..].into_iter().filter_map(|x|if x > &xs[0]{ Some(*x) }else{ None }).collect());
-    small.into_iter().chain([xs[0]].into_iter()).chain(big.into_iter()).collect()
+    let small = qsort(&mut xs[1..].iter().filter_map(|x|if x <= &xs[0]{ Some(*x) }else{ None }).collect::<Vec<_>>());
+    let big = qsort(&mut xs[1..].iter().filter_map(|x|if x > &xs[0]{ Some(*x) }else{ None }).collect::<Vec<_>>());
+    small.into_iter().chain([xs[0]]).chain(big).collect()
 }

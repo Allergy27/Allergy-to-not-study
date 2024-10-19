@@ -10,15 +10,15 @@ fn cin() -> String {
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let ans = cin()
         .chars()
-        .fold((String::new(), String::new(), String::new()), |x, c| {
+        .fold((String::new(), String::new(), String::new()), |x, c: char| {
             let y = c.to_string();
             if x.1.is_empty() {
-                if '0' <= c && c <= '9' {
+                if c.is_ascii_digit() {
                     (y + &x.0, x.1, x.2)
                 } else {
                     (x.0, x.1 + &y, x.2)

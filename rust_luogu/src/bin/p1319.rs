@@ -10,7 +10,7 @@ fn cin() -> String {
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let qwq = cin()
@@ -24,7 +24,7 @@ fn solve() {
             print!("{}", check.1);
             check.0 = (check.0 + 1) % n;
             if check.0 == 0 {
-                println!("");
+                println!();
             }
         });
         check.1 = (check.1 + 1) % 2;

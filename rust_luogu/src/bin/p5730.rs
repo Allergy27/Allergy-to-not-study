@@ -10,7 +10,7 @@ fn cin() -> String {
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let scanner = [
@@ -32,7 +32,7 @@ fn solve() {
         .collect();
     (0..5).for_each(|y| {
         (0..n * 4 - 1).for_each(|x| print!("{}", qwq[x][y]));
-        println!("")
+        println!()
     });
 }
 fn print_scan(k: [i32; 4]) -> Vec<Vec<char>> {

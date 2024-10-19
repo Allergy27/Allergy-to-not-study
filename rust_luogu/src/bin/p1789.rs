@@ -10,7 +10,7 @@ fn cin() -> String {
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let fire = [
@@ -59,7 +59,7 @@ fn solve() {
         .split_whitespace()
         .fold((0, 0, 0), |x, y| (x.1, x.2, y.parse::<usize>().unwrap()));
 
-    
+
     let mut qwq = vec![vec![false; n + 3]; n + 3];
     (0..m).for_each(|_| {
         let (a, b) = cin()
@@ -84,5 +84,5 @@ fn solve() {
     println!("{}", ans);
 }
 fn f(k: i32) -> usize {
-    0 + if k > 0 { k as usize } else { 0 }
+    if k > 0 { k as usize } else { 0 }
 }

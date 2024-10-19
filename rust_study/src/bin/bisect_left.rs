@@ -10,7 +10,7 @@ fn cin() -> String {
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let (_, _) = cin().split_whitespace().fold((0, 0), |x, y| (x.1,y.parse::<usize>().unwrap()));
@@ -22,7 +22,7 @@ fn solve() {
 fn bisect_left<T: Ord>(nums: Vec<T>, x: T) -> usize {
     let (mut l, mut r) = (0, nums.len());
     while l < r {
-        let m = l + r >> 1;
+        let m = (l + r) >> 1;
         if nums[m] > x {
             r = m;
         } else {

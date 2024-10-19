@@ -13,7 +13,7 @@ fn solve() {
     let qwq = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
-    let mut input = input.trim().split_whitespace();
+    let mut input = input.split_whitespace();
     let (year, month): (i32, usize) = (
         input.next().unwrap().parse().unwrap(),
         input.next().unwrap().parse().unwrap(),

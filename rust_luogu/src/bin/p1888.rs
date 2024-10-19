@@ -13,7 +13,6 @@ fn solve() {
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
     let mut qwq: Vec<i32> = input
-        .trim()
         .split_whitespace()
         .map(|s| s.parse().unwrap())
         .collect();
@@ -22,7 +21,7 @@ fn solve() {
         if b == 0 {
             return a;
         }
-        return gcd(b, a % b);
+        gcd(b, a % b)
     }
     println!(
         "{}/{}",

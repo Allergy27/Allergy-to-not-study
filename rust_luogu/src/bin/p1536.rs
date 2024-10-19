@@ -10,7 +10,7 @@ fn cin() -> String {
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     loop {
@@ -22,9 +22,7 @@ fn solve() {
             return;
         }
         let mut qwq = vec![0; a + 1];
-        for i in 1..=a {
-            qwq[i] = i;
-        }
+        qwq.iter_mut().enumerate().skip(1).for_each(|(i, x)| *x = i);
         for _ in 1..=b {
             let (x, y) = cin()
                 .split_whitespace()

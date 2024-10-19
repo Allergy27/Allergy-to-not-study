@@ -10,12 +10,12 @@ fn cin() -> String {
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let mut qwq = cin();
     let n = qwq.len();
-    (1..n).for_each(|_| qwq.extend(cin().chars()));
+    (1..n).for_each(|_| qwq.push_str(&cin()));
     let mut ans = vec![n];
     let mut check = (0, 0);
     qwq.chars().enumerate().for_each(|x| {

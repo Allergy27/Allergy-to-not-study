@@ -10,7 +10,7 @@ fn cin() -> String {
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let mut input = cin().chars().filter(|x| x != &'.').collect::<Vec<char>>();
@@ -37,7 +37,7 @@ fn _match_string(input: String, target: String) -> String {
             let r = x.1.clone() + &y.to_string();
             if r == target {
                 (x.0, String::new())
-            } else if r == &target[..r.len()] {
+            } else if r == target[..r.len()] {
                 (x.0, r)
             } else {
                 (x.0 + &r, String::new())

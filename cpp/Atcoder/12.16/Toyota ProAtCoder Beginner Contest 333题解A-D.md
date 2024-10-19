@@ -147,7 +147,7 @@ D.
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let mut input = String::new();
@@ -158,7 +158,7 @@ fn solve() {
         //读输入
         let mut input = String::new();
         std::io::stdin().read_line(&mut input).unwrap();
-        let mut input = input.trim().split_whitespace();
+        let mut input = input.split_whitespace();
         //建树
         let (a, b): (usize, usize) = (
             input.next().unwrap().parse().unwrap(),

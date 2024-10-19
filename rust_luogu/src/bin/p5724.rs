@@ -5,13 +5,13 @@
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
     input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
-    let qwq = input.trim().split_whitespace().map(|s| s.parse().unwrap()).fold((0, 1001), |x, i| (x.0.max(i), x.1.min(i)));
+    let qwq = input.split_whitespace().map(|s| s.parse().unwrap()).fold((0, 1001), |x, i| (x.0.max(i), x.1.min(i)));
     println!("{}",qwq.0-qwq.1);
 }

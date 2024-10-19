@@ -9,7 +9,7 @@ fn cin() -> String {
 }
 fn main() {
     let t = cin().parse::<i32>().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let _ = cin().parse::<usize>().unwrap();

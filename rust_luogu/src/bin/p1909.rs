@@ -13,11 +13,11 @@ fn solve() {
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
     let needed: f64 = input.trim().parse().unwrap();
-    let mut min_cost: f64 = std::f64::INFINITY;
+    let mut min_cost: f64 = f64::INFINITY;
     for _ in 1..=3 {
         let mut input = String::new();
         std::io::stdin().read_line(&mut input).unwrap();
-        let mut input = input.trim().split_whitespace();
+        let mut input = input.split_whitespace();
         let (a, b): (f64, f64) = (
             input.next().unwrap().parse().unwrap(),
             input.next().unwrap().parse().unwrap(),

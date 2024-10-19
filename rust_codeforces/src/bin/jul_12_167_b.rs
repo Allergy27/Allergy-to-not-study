@@ -9,7 +9,7 @@ fn cin() -> String {
 }
 fn main() {
     let t = cin().parse::<i32>().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let a = cin();
@@ -27,19 +27,18 @@ fn solve() {
     }
     let mut max = 0;
     let n = b.len();
-    let m = check.len();
     for i in 0..n {
         let mut k = 0;
         let mut ka = 0;
-        for j in 0..m {
+        for &ch in &check {
             if i + k < n && i + ka < n {
-                if check[j] == b[i + k] {
+                if ch == b[i + k] {
                     k += 1;
                 } else {
                     max = k.max(max);
-                    k = if check[j] == b[i] { 1 } else { 0 };
+                    k = if ch == b[i] { 1 } else { 0 };
                 }
-                if check[j] == b[i + ka] {
+                if ch == b[i + ka] {
                     ka += 1;
                 }
             }

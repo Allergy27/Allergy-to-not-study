@@ -41,10 +41,10 @@ fn dfs(t: &Vec<Vec<usize>>, node: usize, fa: usize, n: usize) -> (usize, usize, 
         }
     }
     ans.1 = ans.1.max(n - ans.0);
-    if ans.1 < ans.2 .0 {
-        ans.2 = (ans.1, node);
-    } else if ans.1 == ans.2 .0 {
-        ans.2 .1 = node.min(ans.2 .1);
+    match ans.1.cmp(&ans.2 .0) {
+        std::cmp::Ordering::Less => ans.2 = (ans.1, node),
+        std::cmp::Ordering::Equal => ans.2 .1 = node.min(ans.2 .1),
+        std::cmp::Ordering::Greater => {} // No action needed for the greater case
     }
     ans
 }

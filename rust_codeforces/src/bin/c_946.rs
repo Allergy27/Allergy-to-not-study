@@ -9,7 +9,7 @@ fn cin() -> String {
 }
 fn main() {
     let t = cin().parse::<i128>().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let n = cin().parse::<usize>().unwrap();
@@ -24,8 +24,8 @@ fn solve() {
             let triple_tot = (nums[i], nums[i + 1], nums[i + 2]);
             let check_tot = vec![
                 (0, nums[i + 1], nums[i + 2]),
-                (nums[i + 0], 0, nums[i + 2]),
-                (nums[i + 0], nums[i + 1], 0),
+                (nums[i], 0, nums[i + 2]),
+                (nums[i], nums[i + 1], 0),
             ];
             for trip in check_tot {
                 ans += qwq.get(&trip).unwrap_or(&0) - qwq.get(&triple_tot).unwrap_or(&0);

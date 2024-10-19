@@ -7,11 +7,11 @@ use std::f32::consts::E;
 fn main() {
     let t=1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_|solve());
+    (0..t).for_each(|_|solve());
 }
 fn solve() {
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
     let x:f32 = input.trim().parse().unwrap();
-    println!("{:.0}",((1.0-x/100.0).log(E)/(0.98 as f32).log(E)).ceil())
+    println!("{:.0}",((1.0-x/100.0).log(E)/0.98_f32.log(E)).ceil())
 }

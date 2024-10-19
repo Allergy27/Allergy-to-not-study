@@ -5,7 +5,7 @@
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let mut input = String::new();
@@ -31,6 +31,6 @@ fn solve() {
         }
     }
     let ans=(0..=count).fold((0,0),|x,_|if x.0+result[x.1]<=n{(x.0+result[x.1],x.1+1)}else {x}).1;
-    let _= (0..ans).for_each(|x|println!("{}",result[x]));
+    (0..ans).for_each(|x|println!("{}",result[x]));
     println!("{}",ans);
 }

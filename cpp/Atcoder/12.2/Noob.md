@@ -1,6 +1,6 @@
 # ⭐Daiwa Securities Co. Ltd. Programming Contest 2023（AtCoder Beginner Contest 331）
----  
-**前言:**  
+---
+**前言:**
 前两题都是签到题，不知道为什么这次做了很久，**状态每况愈下了**
 第三题也不复杂，不清楚为什么一直到最后才写出来
 第四题也有偏暴力的做法，不知道为什么当时没写出来
@@ -107,7 +107,7 @@ void solve() {
 }
 ```
 
-### 第五题 
+### 第五题
 [E](#目录)
 ---
 - **题目分析**：
@@ -151,7 +151,7 @@ fn solve() {
     //以下是读取输入，不用知道在干嘛，只要知道读取了输入就行
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
-    let mut input = input.trim().split_whitespace();
+    let mut input = input.split_whitespace();
     let (n, m, l): (usize, usize, i32) = (
         input.next().unwrap().parse().unwrap(),
         input.next().unwrap().parse().unwrap(),
@@ -175,7 +175,7 @@ fn solve() {
     for _ in 0..l {
         let mut input = String::new();
         std::io::stdin().read_line(&mut input).unwrap();
-        let mut input = input.trim().split_whitespace();
+        let mut input = input.split_whitespace();
         let (c, d): (usize, usize) = (
             input.next().unwrap().parse().unwrap(),
             input.next().unwrap().parse().unwrap(),

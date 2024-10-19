@@ -5,12 +5,12 @@
 fn main() {
     let t=1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_|solve());
+    (0..t).for_each(|_|solve());
 }
 fn solve() {
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
     let n:i32 = input.trim().parse().unwrap();
-    let ans=(1..=n).fold(0,|x,y|x+y);
+    let ans=(1..=n).sum::<i32>();
     println!("{}",ans);
 }

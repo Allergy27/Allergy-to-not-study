@@ -12,13 +12,13 @@ fn main() {
 fn solve() {
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
-    let mut input = input.trim().split_whitespace();
+    let mut input = input.split_whitespace();
     let (a, b, c): (i32, i32, i32) = (
         input.next().unwrap().parse().unwrap(),
         input.next().unwrap().parse().unwrap(),
         input.next().unwrap().parse().unwrap(),
     );
-    let mut qwq = vec![a, b, c];
+    let mut qwq = [a, b, c];
     qwq.sort_unstable();
     println!("{} {} {}", qwq[0], qwq[1], qwq[2]);
 }

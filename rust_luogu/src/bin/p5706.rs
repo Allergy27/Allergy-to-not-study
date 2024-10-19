@@ -6,7 +6,7 @@
 fn main() {
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
-    let mut input = input.trim().split_whitespace();
+    let mut input = input.split_whitespace();
     let (cook_cola, class_mates): (f64, f64) = (
         input.next().unwrap().parse().unwrap(),
         input.next().unwrap().parse().unwrap(),

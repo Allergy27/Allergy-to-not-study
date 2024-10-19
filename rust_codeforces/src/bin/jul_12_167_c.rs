@@ -9,7 +9,7 @@ fn cin() -> String {
 }
 fn main() {
     let t = cin().parse::<i32>().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let n = cin().parse::<usize>().unwrap();
@@ -24,13 +24,13 @@ fn solve() {
     let (mut x, mut y) = (0, 0);
     let (mut pos, mut neg) = (0, 0);
     for i in 0..n {
-        if a[i] > b[i] {
-            x += a[i]
-        } else if a[i] < b[i] {
-            y += b[i]
-        } else {
-            neg += (a[i] < 0) as i32;
-            pos += (a[i] > 0) as i32;
+        match a[i].cmp(&b[i]) {
+            std::cmp::Ordering::Greater => x += a[i],
+            std::cmp::Ordering::Less => y += b[i],
+            std::cmp::Ordering::Equal => {
+                neg += (a[i] < 0) as i32;
+                pos += (a[i] > 0) as i32;
+            }
         }
     }
     println!(

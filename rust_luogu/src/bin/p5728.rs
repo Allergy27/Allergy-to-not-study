@@ -5,23 +5,22 @@
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
     let n: usize = input.trim().parse().unwrap();
     let mut qwq: Vec<Vec<i32>> = vec![vec![]; n];
-    for i in 0..n {
+    for qwq_i in qwq.iter_mut() {
         let mut input = String::new();
         std::io::stdin().read_line(&mut input).unwrap();
-        qwq[i] = input
-            .trim()
+        *qwq_i = input
             .split_whitespace()
             .map(|s| s.parse().unwrap())
             .collect();
-        let sum = qwq[i].iter().sum::<i32>();
-        qwq[i].push(sum);
+        let sum = qwq_i.iter().sum::<i32>();
+        qwq_i.push(sum);
     }
     let ans = (0..n).fold(0, |x, i| {
         x+(i + 1..n).fold(0, |y, j| {

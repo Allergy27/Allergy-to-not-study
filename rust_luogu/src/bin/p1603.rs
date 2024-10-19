@@ -11,7 +11,7 @@ fn cin() -> String {
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let k = vec![
@@ -47,7 +47,7 @@ fn solve() {
         0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 00, 21, 44, 69, 96, 25, 56, 89, 24, 61, 0, 1, 4, 1, 1,
         4, 9,
     ]; //value
-    let check = k.iter().zip(v.into_iter()).collect::<HashMap<_, _>>();
+    let check = k.iter().zip(v).collect::<HashMap<_, _>>();
     let mut qwq = cin()
         .split_whitespace()
         .filter_map(|x| if k.contains(&x) { check.get(&x) } else { None })

@@ -5,7 +5,7 @@
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();
-    let _ = (0..t).for_each(|_| solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
     let mut input = String::new();
@@ -36,6 +36,6 @@ fn solve() {
     }
     (0..n).for_each(|x| {
         (0..n).for_each(|y| print!("{} ", qwq[x][y]));
-        println!("")
+        println!()
     })
 }
