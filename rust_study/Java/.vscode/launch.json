@@ -1,0 +1,134 @@
+{
+    // 使用 IntelliSense 了解相关属性。
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Employee",
+            "request": "launch",
+            "mainClass": "lesson.Employee",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "Huahua",
+            "request": "launch",
+            "mainClass": "lesson.Huahua",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "Staffclass",
+            "request": "launch",
+            "mainClass": "lesson.Staffclass",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "Atm",
+            "request": "launch",
+            "mainClass": "lesson.Atm",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "MilkTest",
+            "request": "launch",
+            "mainClass": "lesson.MilkTest",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "Triple",
+            "request": "launch",
+            "mainClass": "lesson.Triple",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "WaterFlower",
+            "request": "launch",
+            "mainClass": "lesson.WaterFlower",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "MyStar",
+            "request": "launch",
+            "mainClass": "lesson.MyStar",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "class_program.Main",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "class_program.main",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "media",
+            "request": "launch",
+            "mainClass": "class_program.media",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "P1001",
+            "request": "launch",
+            "mainClass": "P1001",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "get_red",
+            "request": "launch",
+            "mainClass": "get_red",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "helloWorld",
+            "request": "launch",
+            "mainClass": "helloWorld",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "QWQ",
+            "request": "launch",
+            "mainClass": "QWQ",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "QVQ",
+            "request": "launch",
+            "mainClass": "QVQ",
+            "projectName": "Java_9d75402a"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "console": "externalTerminal"
+        },
+        {
+            "type": "java",
+            "name": "Launch File",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "Java_9d75402a"
+        }
+    ]
+}

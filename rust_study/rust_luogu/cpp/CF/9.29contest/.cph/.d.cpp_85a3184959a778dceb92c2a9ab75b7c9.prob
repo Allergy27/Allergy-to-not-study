@@ -1,0 +1,1 @@
+{"name":"Local: d","url":"d:\\Craft\\Cpp\\CF\\9.29contest\\d.cpp","tests":[{"id":1727631211828,"input":"3\n10 2\n1 2 4\n2 2 4\n100 1\n19 2 4\n100 3\n1 2 5\n7 2 6\n17 2 31\n","output":"2\n96\n61\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\CF\\9.29contest\\d.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"d:\\Craft\\Python\\ACM\\qwq\\B.py","tests":[{"id":1728296288385,"input":"4\n4\n2 2 1 2\n3\n0 1 2\n5\n4 3 2 3 4\n9\n9 9 9 9 9 9 9 9 9\n","output":"16\n2\n432\n430467210\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Python\\ACM\\qwq\\B.py","group":"local","local":true}

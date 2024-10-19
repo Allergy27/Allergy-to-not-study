@@ -1,0 +1,1 @@
+{"name":"Local: c","url":"d:\\Craft\\Cpp\\ACM\\4.20\\c.cpp","tests":[{"id":1713611230577,"input":"10 10\n0101011000\n0010000101\n0111001011\n1000011001\n0101001110\n0101001111\n0011010110\n1000001110\n1000111110\n0101101011","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\ACM\\4.20\\c.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: d","url":"d:\\Craft\\Cpp\\Atcoder\\10.13New\\d.cpp","tests":[{"id":1728819295676,"input":"3 4\n4 3\n4 1\n2 2\n","output":"5"},{"id":1728819378007,"input":"5 3\n1 2\n1 3\n1 4\n2 1\n2 3\n","output":"10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\Atcoder\\10.13New\\d.cpp","group":"local","local":true}

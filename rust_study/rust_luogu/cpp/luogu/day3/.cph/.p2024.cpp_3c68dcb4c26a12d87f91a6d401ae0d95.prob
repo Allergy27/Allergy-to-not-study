@@ -1,0 +1,1 @@
+{"name":"Local: p2024","url":"d:\\Craft\\Cpp\\luogu\\day3\\p2024.cpp","tests":[{"id":1727159943426,"input":"100 7\n1 101 1\n2 1 2\n2 2 3\n2 3 3\n1 1 3\n2 3 1\n1 5 5\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Craft\\Cpp\\luogu\\day3\\p2024.cpp","group":"local","local":true}

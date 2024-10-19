@@ -1,0 +1,374 @@
+<!DOCTYPE html><html><head>
+      <title>solved</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Allergy\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.10\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="ccut2023训练赛大一第五场">⭐CCUT2023训练赛大一第五场 </h1>
+<hr>
+<p><strong>前言:</strong></p>
+<p><strong>难度很大</strong>,很不好写,大概涉及了：数学、模拟、BFS、找规律、dp、二分答案<br>
+很奇怪，比上周<strong>难度高</strong>了不只一点，有一种<strong>知识的美</strong></p>
+<h2 id="目录">目录： </h2>
+<hr>
+<ol>
+<li><a href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><strong>题目A</strong></a>：降智签到题</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><strong>题目B</strong></a>：暴力超时题</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><strong>题目C</strong></a>：降智签到题</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><strong>题目D</strong></a>：BFS</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E9%A2%98"><strong>题目E</strong></a>：数学题</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E9%A2%98"><strong>题目F</strong></a>：找规律题</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E9%A2%98"><strong>题目G</strong></a>：找规律题</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E9%A2%98"><strong>题目H</strong></a>：博弈论+dp题</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E9%A2%98"><strong>题目I</strong></a>：二分答案题</li>
+</ol>
+<h3 id="第一题">第一题 </h3>
+<h2><a href="#%E7%9B%AE%E5%BD%95">A - A</a></h2>
+<ul>
+<li><strong>题目分析</strong>：<br>
+1 2 4刚好能让和和0-7一一对应，想到转二进制有1得1即按位或，降智签到题<br>
+<sub>相应图解:</sub><br>
+<img src="https://gitee.com/deer-b/picture/raw/master/img/image-1.png" alt="img1"><br>
+我们在脑子里将其转为2进制表示(这个是6👆)<br>
+<img src="https://gitee.com/deer-b/picture/raw/master/img/image-2.png" alt="img2"><br>
+这个是5👆<br>
+那么对每一位都进行或运算，就得到1 1 1,即7👇<br>
+<img src="https://gitee.com/deer-b/picture/raw/master/img/image-3.png" alt="img3"><br>
+这也就是C/C++中按位或实际操作的形式</li>
+<li><strong>代码实现</strong>：<br>
+<sub>(拿第一题说明一下，就是除了第一个以外,接下来的代码只给出解题的函数solve()，主函数部分知道要有就行)</sub></li>
+</ul>
+<pre data-role="codeBlock" data-info="C++" class="language-cpp C++"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span><span class="token comment">//这是个模板,万能库写好了</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">ll</span> <span class="token expression"><span class="token keyword keyword-long">long</span> <span class="token keyword keyword-long">long</span></span></span>
+<span class="token comment">//以及ll代替long long</span>
+
+<span class="token keyword keyword-using">using</span> <span class="token keyword keyword-namespace">namespace</span> std<span class="token punctuation">;</span><span class="token comment">//命名空间也是</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//解题部分</span>
+    <span class="token keyword keyword-int">int</span> a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>a<span class="token operator">&gt;&gt;</span>b<span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>a<span class="token operator">|</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//按位或</span>
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+    <span class="token keyword keyword-int">int</span> t<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//如果有多个样例就把下面那个注释取消了</span>
+    <span class="token comment">//cin&gt;&gt;t;</span>
+    <span class="token keyword keyword-while">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="第二题">第二题 </h3>
+<h2><a href="#%E7%9B%AE%E5%BD%95">B - B</a></h2>
+<ul>
+<li><strong>题目分析</strong>：<br>
+可以按上周那道铺方格的题一样，但是会超时,需要转换思路
+<ul>
+<li>对称的图形会有特殊性质</li>
+<li>所以观察后发现:
+<ul>
+<li>我们创建一个新的数组，遍历旧数组最后一位和第一位</li>
+<li>后面位的长度其实就是新数组当前应该有的长度,不够的话我们反复添加前面位的数字直到长度相等(比较容易验证对对称的图形这个新数组和旧的数组相等)</li>
+</ul>
+</li>
+<li>另外，不难发现如果首位不等于数组长度一定不对称</li>
+</ul>
+</li>
+<li>这样，算法的时间复杂度为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\theta(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，对题目的数据来说，这样一定是不会超时的<br>
+<sub>相应图解:</sub><br>
+<img src="https://gitee.com/deer-b/picture/raw/master/img/image-4.png" alt=""><br>
+观察发现最后一位的长度就是第一位的宽度，所以如果新数组长度不够我们扩充一个前面位也就是5👆<br>
+<img src="https://gitee.com/deer-b/picture/raw/master/img/image.png" alt=""><br>
+假设不对称那么就是如图所示👆<br>
+应该足够直观了吧qwq</li>
+<li><strong>代码实现</strong>：</li>
+</ul>
+<pre data-role="codeBlock" data-info="C++" class="language-cpp C++"><code><span class="token keyword keyword-void">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//解题部分</span>
+    <span class="token keyword keyword-int">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>i<span class="token punctuation">,</span>j<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword keyword-int">int</span><span class="token operator">&gt;</span><span class="token function">qwq</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-auto">auto</span> <span class="token operator">&amp;</span>x<span class="token operator">:</span>qwq<span class="token punctuation">)</span>cin<span class="token operator">&gt;&gt;</span>x<span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>qwq<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">!=</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">"NO\n"</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-return">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword keyword-int">int</span><span class="token operator">&gt;</span>qaq<span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token operator">--</span>i<span class="token punctuation">)</span>
+        <span class="token keyword keyword-while">while</span><span class="token punctuation">(</span>qaq<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>qwq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            qaq<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//根据性质求对称</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>qwq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>qaq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            cout<span class="token operator">&lt;&lt;</span><span class="token string">"NO\n"</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-return">return</span><span class="token punctuation">;</span><span class="token comment">//原本需要用一个哨兵实现的，但是这里是函数实现，可以直接结束</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">"YES\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="第三题">第三题 </h3>
+<h2><a href="#%E7%9B%AE%E5%BD%95">C - C</a></h2>
+<ul>
+<li><strong>题目分析</strong>：<br>
+作两步判断：1.要不要过墙 2.能不能拿到锤子<br>
+不用过墙直接输出绝对值，拿不到锤子直接-1，能拿到输出差绝对值加到锤子距离绝对值<br>
+<sub>相应图解:</sub><br>
+<img src="https://gitee.com/deer-b/picture/raw/master/img/image-5.png" alt=""><br>
+按说这道降智签到题不用图解，已经很直观了,但我还是画了，欸嘿qwq</li>
+<li><strong>代码部分</strong>：</li>
+</ul>
+<pre data-role="codeBlock" data-info="C++" class="language-cpp C++"><code><span class="token keyword keyword-void">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//解题部分</span>
+    <span class="token keyword keyword-int">int</span> x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>x<span class="token operator">&gt;&gt;</span>y<span class="token operator">&gt;&gt;</span>z<span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token function">abs</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span>x<span class="token operator">*</span>y<span class="token operator">&gt;</span><span class="token number">0</span><span class="token operator">||</span>x<span class="token operator">*</span>y<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//如果墙没堵住，就不用想锤子的事了，直接给出答案</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token function">abs</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-return">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token function">abs</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span>y<span class="token operator">*</span>z<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//如果锤子在墙后,就不用考虑了，肯定拿不到</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-return">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token function">abs</span><span class="token punctuation">(</span>x<span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">abs</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="第四题">第四题 </h3>
+<h2><a href="#%E7%9B%AE%E5%BD%95">D - D</a></h2>
+<ul>
+<li><strong>题目分析</strong>：<br>
+一道还算典型的宽搜题，虽然一开始其实没想到会有宽搜的题，所以这题磕磕绊绊写了好多回
+<ul>
+<li>我们先理解一下宽搜是什么吧，想想大火应该都没接触</li>
+<li>然后又因为大火可能都没接触过，我直接配图讲<br>
+<img src="https://gitee.com/deer-b/picture/raw/master/img/image-6.png" alt=""><br>
+我们假设要求A到G的最短路径，那么明眼人一眼能看出来是A-D-G，那么为什么呢，其实是你通过看的方式完成了遍历，但是计算机不能这么做，我们要实现上述过程，得转换思路：</li>
+<li>首先我们从A出发，将A入队<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，接着将队列里的元素出队(在这里是A)，将与出队元素相邻的元素入队,即：<br>
+<img src="https://gitee.com/deer-b/picture/raw/master/img/image-7.png" alt=""></li>
+<li>每次将队列已经入过队的数标记一下<sub>（用你喜欢的方式）</sub>,最后我们把这个图遍历完<sub>（队列为空时）</sub></li>
+<li>最后将从G到A的路径<sub>（之前标记过的）</sub>加入一个新数组，然后从后往前输出这个数组即可</li>
+</ul>
+</li>
+<li>那么宽搜做这道题的思路就很明了了，最后我们用别人的动图<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>来演示整个过程<br>
+<img src="https://gitee.com/deer-b/picture/raw/master/img/16c946b4565ec047~tplv-t2oaga2asx-jj-mark%203024%200%200%200%20q75.webp" alt=""></li>
+</ul>
+<ul>
+<li><strong>代码实现</strong>：</li>
+</ul>
+<pre data-role="codeBlock" data-info="C++" class="language-cpp C++"><code>oid <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//解题部分</span>
+    <span class="token keyword keyword-int">int</span> n<span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>n<span class="token operator">&gt;&gt;</span>x<span class="token operator">&gt;&gt;</span>y<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword keyword-int">int</span><span class="token operator">&gt;&gt;</span><span class="token function">qwq</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//下标从1开始，所以n+1</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword keyword-int">int</span> U<span class="token punctuation">,</span>V<span class="token punctuation">;</span>
+        cin<span class="token operator">&gt;&gt;</span>U<span class="token operator">&gt;&gt;</span>V<span class="token punctuation">;</span>
+        qwq<span class="token punctuation">[</span>U<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>V<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//边相连</span>
+        qwq<span class="token punctuation">[</span>V<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>U<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//边相连</span>
+    <span class="token punctuation">}</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword keyword-int">int</span><span class="token operator">&gt;</span><span class="token function">qaq</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//记录是不是找过了</span>
+    queue<span class="token operator">&lt;</span><span class="token keyword keyword-int">int</span><span class="token operator">&gt;</span> que<span class="token punctuation">;</span> <span class="token comment">//队列实现BFS</span>
+
+    qaq<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//从x开始找，x为0</span>
+    que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//入队</span>
+
+    <span class="token keyword keyword-while">while</span><span class="token punctuation">(</span><span class="token operator">!</span>que<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword keyword-int">int</span> fa<span class="token operator">=</span>que<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//找父亲</span>
+        que<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//出队</span>
+
+        <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> son<span class="token operator">:</span>qwq<span class="token punctuation">[</span>fa<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//找儿子</span>
+            <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>qaq<span class="token punctuation">[</span>son<span class="token punctuation">]</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword keyword-continue">continue</span><span class="token punctuation">;</span> <span class="token comment">//之前找过了就找下一个</span>
+            qaq<span class="token punctuation">[</span>son<span class="token punctuation">]</span><span class="token operator">=</span>fa<span class="token punctuation">;</span> <span class="token comment">//孩子和父亲连接</span>
+            que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>son<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//孩子入队</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-int">int</span> i<span class="token operator">=</span>y<span class="token punctuation">;</span> <span class="token comment">//找完了</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword keyword-int">int</span><span class="token operator">&gt;</span>ans<span class="token punctuation">;</span> <span class="token comment">//存放答案</span>
+    <span class="token keyword keyword-while">while</span><span class="token punctuation">(</span>qaq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//qaq[i]非空</span>
+        ans<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//添加</span>
+        i<span class="token operator">=</span>qaq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//找下一个</span>
+    <span class="token punctuation">}</span>
+    ans<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//添加开头</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i<span class="token operator">=</span>ans<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token operator">--</span>i<span class="token punctuation">)</span>cout<span class="token operator">&lt;&lt;</span>ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token char">' '</span><span class="token punctuation">;</span> <span class="token comment">//输出</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="第五题">第五题 </h3>
+<h2><a href="#%E7%9B%AE%E5%BD%95">E - E</a></h2>
+<ul>
+<li><strong>题目分析</strong>：<br>
+数学题，二阶等差数列
+<ul>
+<li>我们考虑最差情况，每个之间差只隔了1,然后用求和公式判断xy是否符合题意</li>
+<li>不符合没什么好说的，如果符合，我们用最差情况输出，然后因为题目要求边界只能为x,y，所以边界改输出x,y就行</li>
+</ul>
+</li>
+<li>公式:S<sub>n</sub>=a<sub>1</sub>+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>−</mo><mi>n</mi></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{n^2-n}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3629em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0179em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-2.931em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li><strong>代码实现</strong>：</li>
+</ul>
+<pre data-role="codeBlock" data-info="C++" class="language-cpp C++"><code><span class="token keyword keyword-void">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//解题部分</span>
+    <span class="token keyword keyword-int">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>i<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>x<span class="token operator">&gt;&gt;</span>y<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token punctuation">(</span>n<span class="token operator">*</span>n<span class="token operator">-</span>n<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token operator">&gt;</span>y<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-return">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword keyword-int">int</span><span class="token operator">&gt;</span>qwq<span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span>qwq<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>y<span class="token operator">-</span><span class="token punctuation">(</span>i<span class="token operator">*</span>i<span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>x<span class="token operator">&lt;&lt;</span><span class="token char">' '</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-while">while</span><span class="token punctuation">(</span><span class="token operator">--</span>i<span class="token punctuation">)</span>cout<span class="token operator">&lt;&lt;</span>qwq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">1</span><span class="token operator">?</span> <span class="token char">'\n'</span><span class="token operator">:</span><span class="token char">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="第六题">第六题 </h3>
+<h2><a href="#%E7%9B%AE%E5%BD%95">F - F</a></h2>
+<ul>
+<li><strong>题目分析</strong>：<br>
+找规律题<sub>（说不定带点数学？）</sub>
+<ul>
+<li>首先，我们确定当有偶数个非正数的时候，一定可以让所有数都变成非负数</li>
+<li>接着，如果有奇数个非正数时，我们让绝对值最小的数变成负数，</li>
+<li>于是，最后只要全部作<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|x|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal">x</span><span class="mord">∣</span></span></span></span>,奇数减去两倍最小值，偶数直接全部求和即可</li>
+</ul>
+</li>
+<li><strong>代码实现</strong>：</li>
+</ul>
+<pre data-role="codeBlock" data-info="C++" class="language-cpp C++"><code><span class="token keyword keyword-void">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//解题部分</span>
+    ll n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>Min<span class="token operator">=</span><span class="token number">1e9</span><span class="token operator">+</span><span class="token number">7</span><span class="token punctuation">,</span>sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span>ll<span class="token operator">&gt;</span><span class="token function">qwq</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-auto">auto</span> <span class="token operator">&amp;</span>x<span class="token operator">:</span>qwq<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        cin<span class="token operator">&gt;&gt;</span>x<span class="token punctuation">;</span>
+        <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>x<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">)</span>ans<span class="token operator">=</span><span class="token punctuation">(</span>ans<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">//记录非正数奇偶</span>
+        x<span class="token operator">=</span><span class="token function">abs</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sum<span class="token operator">+=</span>x<span class="token punctuation">;</span> <span class="token comment">//总和</span>
+        Min<span class="token operator">=</span><span class="token function">min</span><span class="token punctuation">(</span>Min<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>ans<span class="token operator">%</span><span class="token number">2</span><span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>sum<span class="token operator">-=</span>Min<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>sum<span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="第七题">第七题 </h3>
+<h2><a href="#%E7%9B%AE%E5%BD%95">G - G</a></h2>
+<ul>
+<li><strong>题目分析</strong>：<br>
+找规律,给你的数一定是小于大于等于前一个数的，那就让小于前一个数的时侯添一个1。</li>
+<li><strong>代码实现</strong>：</li>
+</ul>
+<pre data-role="codeBlock" data-info="C++" class="language-cpp C++"><code><span class="token keyword keyword-void">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//解题部分</span>
+    <span class="token keyword keyword-int">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>i<span class="token punctuation">,</span>j<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span>ll<span class="token operator">&gt;</span>qwq<span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        ll x<span class="token punctuation">;</span>
+        cin<span class="token operator">&gt;&gt;</span>x<span class="token punctuation">;</span>
+        <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>i<span class="token operator">&amp;&amp;</span>x<span class="token operator">&lt;</span>qwq<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>qwq<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        qwq<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout<span class="token operator">&lt;&lt;</span>qwq<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span><span class="token string">"\n"</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-auto">auto</span> <span class="token operator">&amp;</span>x<span class="token operator">:</span>qwq<span class="token punctuation">)</span>cout<span class="token operator">&lt;&lt;</span>x<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="第八题">第八题 </h3>
+<h2><a href="#%E7%9B%AE%E5%BD%95">H - H</a></h2>
+<ul>
+<li>
+<p><strong>题目分析</strong>：<br>
+博弈论+dp</p>
+<ul>
+<li>说起来我一开始以为每个人都取最大石头数最后肯定是最大石头数，后来想起来这个考博弈论的，每次不一定是取最大最后最大，我只知道有这么个结论要我举例子还是有点为难，总之大火也就记下结论吧，说起来博弈论还挺有意思的。</li>
+<li>然后说说这题的思路，虽然直接求最优方案比较困难，但是正难则反，我们考虑倒过来求最大值，先考虑0个、1个……n个石头的最大值，也就是用dp即动态规划来做</li>
+<li>写出状态转移方程：<br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>i</mi><mo>−</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mi>k</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)=max(f(x),i-f(x-k))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">))</span></span></span></span></li>
+<li>这里i代表当前石头数，k代表取几个石头的方案</li>
+</ul>
+</li>
+<li>
+<p><strong>代码实现</strong>：</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="C++" class="language-cpp C++"><code><span class="token keyword keyword-void">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//解题部分</span>
+    <span class="token keyword keyword-int">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>k<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>n<span class="token operator">&gt;&gt;</span>k<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword keyword-int">int</span><span class="token operator">&gt;</span><span class="token function">qwq</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-auto">auto</span> <span class="token operator">&amp;</span>x<span class="token operator">:</span>qwq<span class="token punctuation">)</span>cin<span class="token operator">&gt;&gt;</span>x<span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> dp<span class="token punctuation">[</span><span class="token number">10010</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span>
+        <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>k<span class="token punctuation">;</span><span class="token operator">++</span>j<span class="token punctuation">)</span>
+            <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>i<span class="token operator">&gt;=</span>qwq<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token operator">-</span>dp<span class="token punctuation">[</span>i<span class="token operator">-</span>qwq<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="第九题">第九题 </h3>
+<h2><a href="#%E7%9B%AE%E5%BD%95">I - I</a></h2>
+<ul>
+<li><strong>题目分析</strong>：<br>
+因为每次跑一圈每个减1，减得太慢了，我们想办法让他快点，想到用二分答案的方法
+<ul>
+<li>二分答案，顾名思义，要知道答案</li>
+<li>我们先把篮子想象成柱子，如图所示：<br>
+<img src="https://gitee.com/deer-b/picture/raw/master/img/image-8.png" alt=""></li>
+<li>那么吃的过程就可以想象成是切柱子，我们要让剩下的部分尽可能等于k但又不一定等于k<sub>（稍大）</sub> 那接着就可以作最后一轮循环取找到最后的答案了</li>
+<li>时间复杂度应该是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>l</mi><mi>g</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">nlgn</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">n</span></span></span></span>),不算大</li>
+</ul>
+</li>
+<li><strong>代码实现</strong>：</li>
+</ul>
+<pre data-role="codeBlock" data-info="C++" class="language-cpp C++"><code><span class="token keyword keyword-void">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//解题部分</span>
+    ll n<span class="token punctuation">,</span>k<span class="token punctuation">,</span>i<span class="token punctuation">,</span>j<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>n<span class="token operator">&gt;&gt;</span>k<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span>ll<span class="token operator">&gt;</span><span class="token function">qwq</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ll left<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>right<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-auto">auto</span> <span class="token operator">&amp;</span>x<span class="token operator">:</span>qwq<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//传入数据同时找右边界</span>
+        cin<span class="token operator">&gt;&gt;</span>x<span class="token punctuation">;</span>
+        <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>x<span class="token operator">&gt;</span>right<span class="token punctuation">)</span>right<span class="token operator">=</span>x<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    right<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-while">while</span><span class="token punctuation">(</span>left<span class="token operator">&lt;</span>right<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//二分答案</span>
+        ll mid<span class="token operator">=</span><span class="token punctuation">(</span>left<span class="token operator">+</span>right<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&gt;&gt;</span><span class="token number">1</span><span class="token punctuation">;</span>
+        ll sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-auto">auto</span> <span class="token operator">&amp;</span>x<span class="token operator">:</span>qwq<span class="token punctuation">)</span>sum<span class="token operator">+=</span><span class="token function">min</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>mid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>sum<span class="token operator">&gt;=</span>k<span class="token punctuation">)</span>right<span class="token operator">=</span>mid<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-else">else</span> left<span class="token operator">=</span>mid<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    ll sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-auto">auto</span> <span class="token operator">&amp;</span>x<span class="token operator">:</span>qwq<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//模拟一下吃的过程</span>
+        sum<span class="token operator">+=</span><span class="token function">min</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        x<span class="token operator">-=</span><span class="token function">min</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    ll res<span class="token operator">=</span>k<span class="token operator">-</span>sum<span class="token punctuation">;</span><span class="token comment">//还要吃的数量</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token operator">&amp;&amp;</span>res<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>qwq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token operator">--</span>qwq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token operator">--</span>res<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-auto">auto</span> <span class="token operator">&amp;</span>x<span class="token operator">:</span>qwq<span class="token punctuation">)</span>cout<span class="token operator">&lt;&lt;</span>x<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>找了个视频：<a href="https://www.bilibili.com/video/BV1pL4y1n7qY/">https://www.bilibili.com/video/BV1pL4y1n7qY/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://juejin.cn/post/6844903914035232775">https://juejin.cn/post/6844903914035232775</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
