@@ -14,9 +14,9 @@ using ll = int64_t;
 int inf = 0x3f3f3f3f;
 ll ll_inf = 0x3f3f3f3f3f3f3f3f;
 #define N 1000100
+
 int primes[N], cnt;  // primes[]存储所有素数
 bool st[N];          // st[x]存储x是否被筛掉
-
 void get_primes(int n) {
     for (int i = 2; i <= n; i++) {
         if (!st[i]) primes[cnt++] = i;
@@ -47,6 +47,7 @@ signed main() {
             break;
         }
     }
+    cout << n << ln;
     for (int i = 0; i < N; ++i) {
         if (primes[i] * primes[i] * primes[i] >= N) break;
         primes[n++] = primes[i] * primes[i] * primes[i];

@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "cpp_Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "D:\\msy64\\mingw64\\bin",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "D:\\msy64\\mingw64\\bin\\gdb.exe",
+      "setupCommands": [
+        {
+          "description": "为 gdb 启用整齐打印",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "cpp_Build"
+    },
+    {
+      "name": "python_Debug",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "rust_Debug",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${fileDirname}/../../target/debug/${fileBasenameNoExtension}",
+      "args": [],
+      "cwd": "${fileDirname}/..",
+      "console": "externalTerminal",
+      "preLaunchTask": "rust_Build"
+    }
+  ]
+}
