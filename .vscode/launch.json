@@ -20,7 +20,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "cpp_Build"
+      "preLaunchTask": "C/C++ 编译可执行文件"
     },
     {
       "name": "python_Debug",

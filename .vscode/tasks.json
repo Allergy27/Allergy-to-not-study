@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "cpp_Build",
+      "label": "C/C++ 编译可执行文件",
       "type": "cppbuild",
       "command": "D:\\msy64\\mingw64\\bin\\c++.exe",
       "args": [
