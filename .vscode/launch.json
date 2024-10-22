@@ -1,6 +1,16 @@
 {
   "version": "0.2.0",
   "configurations": [
+
+    {
+      "name": "html_Debug",
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "file": "${file}",
+      "firefoxExecutable": "D:\\Program Files\\Firefox\\firefox.exe"
+    },
+
     {
       "name": "cpp_Debug",
       "type": "cppdbg",
