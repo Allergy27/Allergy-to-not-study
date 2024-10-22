@@ -1,7 +1,27 @@
 {
   "version": "0.2.0",
   "configurations": [
-
+    {
+      "name": "java_Debug",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "${fileDirnameBasename}.${fileBasenameNoExtension}",
+      "console": "externalTerminal",
+      "preLaunchTask": "javac",
+      "cwd": "${workspaceFolder}/Java"
+    },
+    {
+      "name": "go_Debug",
+      "type": "go",
+      "request": "launch",
+      "mode": "exec",
+      "program": "${fileDirname}/build/${fileBasenameNoExtension}.exe",
+      "env": {},
+      "args": [],
+      "console": "externalTerminal",
+      "preLaunchTask": "GoBuild"
+      // "showLog": true
+    },
     {
       "name": "html_Debug",
       "type": "firefox",
@@ -10,7 +30,6 @@
       "file": "${file}",
       "firefoxExecutable": "D:\\Program Files\\Firefox\\firefox.exe"
     },
-
     {
       "name": "cpp_Debug",
       "type": "cppdbg",

@@ -1,4 +1,4 @@
-package luogu
+package main
 
 import "fmt"
 

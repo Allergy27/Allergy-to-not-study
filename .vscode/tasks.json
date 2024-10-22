@@ -2,6 +2,39 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "javac",
+      "type": "shell",
+      "command": "javac",
+      "args": [
+        "-d",
+        "${fileDirname}/build", // 将编译后的文件输出到同级目录下的 build 文件夹
+        "${file}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "Compiles the current Java file using javac."
+    },
+    {
+      "label": "GoBuild",
+      "type": "shell",
+      "command": "go",
+      "args": [
+        "build",
+        "-o",
+        "${fileDirname}/build/${fileBasenameNoExtension}.exe",
+        "${file}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "Compiles the Go program and places the executable in the build folder."
+    },
+    {
       "label": "C/C++ 编译可执行文件",
       "type": "cppbuild",
       "command": "D:\\msy64\\mingw64\\bin\\c++.exe",
