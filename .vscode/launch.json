@@ -8,7 +8,6 @@
       "mainClass": "${fileDirnameBasename}.${fileBasenameNoExtension}",
       "console": "externalTerminal",
       "preLaunchTask": "javac",
-      "cwd": "${workspaceFolder}/Java"
     },
     {
       "name": "go_Debug",
@@ -63,7 +62,6 @@
       "type": "lldb",
       "request": "launch",
       "program": "${fileDirname}/../../target/debug/${fileBasenameNoExtension}",
-      "args": [],
       "cwd": "${fileDirname}/..",
       "console": "externalTerminal",
       "preLaunchTask": "rust_Build"

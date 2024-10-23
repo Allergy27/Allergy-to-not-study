@@ -2,7 +2,7 @@
 //@email     Allergy527@gmail.com
 //@workspace atcoder/c_10_12_c.rs
 //@data      2024/10/12 20:16:39
-use ::proconio::input;
+use proconio::input;
 fn main() {
     let t = 1; //let t = cin().parse::<i32>().unwrap();
     (0..t).for_each(|_| solve());

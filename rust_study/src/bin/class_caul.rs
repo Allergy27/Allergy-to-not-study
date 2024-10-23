@@ -119,7 +119,7 @@ impl<'a> Tokenizer<'a> {
 }
 
 // 实现 Iterator 接口，使 Tokenizer 可以通过 for 循环遍历
-impl<'a> Iterator for Tokenizer<'a> {
+impl Iterator for Tokenizer<'_> {
     type Item = Token;
 
     fn next(&mut self) -> Option<Self::Item> {

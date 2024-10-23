@@ -67,14 +67,5 @@
         "cwd": "${fileDirname}/.."
       }
     },
-    {
-      "label": "python_Build",
-      "type": "shell",
-      "command": "echo",
-      "args": [
-        "Python does not require a build step."
-      ],
-      "problemMatcher": []
-    }
   ]
 }
