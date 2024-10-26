@@ -1,11 +1,11 @@
 // Copyright 2024 Allergy
 /* @author    Allergy
  * @email     Allergy527@gmail.com
- * @workspace cpp\A.cpp
- * @date      2024/10/25 16:12:47
+ * @workspace cpp\CF\10.24contest\f.cpp
+ * @date      2024/10/25 00:07:06
  */
-#include <bits/stdc++.h>
-#define lowbit(x) ((x) & (-(x)))
+#include<bits/stdc++.h>
+#define lowbit(x) ((x)&(-(x)))
 #define ln '\n'
 #define int int64_t
 
@@ -16,11 +16,7 @@ ll ll_inf = 0x3f3f3f3f3f3f3f3f;
 
 void solve() {
     int n, m;
-    cin >> n;
-    vector<int> a(n);
-    for (auto &i : a) cin >> i;
-    nth_element(a.begin(), a.begin() + 5, a.end());
-    cout << a[5] << ln;
+    cin >> n >> m;
 }
 
 signed main() {

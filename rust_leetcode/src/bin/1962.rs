@@ -31,12 +31,12 @@ fn solve() {
 fn merge(v: &[i32], m: usize) -> Vec<i32> {
     let (mut l, mut r, n) = (0, m, v.len());
     let mut qwq: Vec<i32> = vec![0; n];
-    for qwq_elem in qwq.iter_mut() {
+    for x in qwq.iter_mut() {
         if l != m && (r == n || v[l] < v[r]) {
-            *qwq_elem = v[l];
+            *x = v[l];
             l += 1;
         } else if r != n && (l == m || v[l] >= v[r]) {
-            *qwq_elem = v[r];
+            *x = v[r];
             r += 1;
         }
     }
