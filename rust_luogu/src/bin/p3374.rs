@@ -2,7 +2,7 @@
 //@email     Allergy527@gmail.com
 //@workspace Prectice_Contest/p3374.rs
 //@data      2024/10/25 19:24:38
-fn cin() -> String {
+fn _cin() -> String {
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
     input.trim().to_string()

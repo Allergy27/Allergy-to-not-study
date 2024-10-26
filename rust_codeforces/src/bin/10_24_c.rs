@@ -1,5 +1,3 @@
-use std::mem::swap;
-
 //@author    Allergy
 //@email     Allergy527@gmail.com
 //@workspace Prectice_Contest/10_24_c.rs
