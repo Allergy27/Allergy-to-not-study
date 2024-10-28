@@ -5,18 +5,21 @@
  */
 
 // @lc code=start
-use std::collections::HashMap;
 impl Solution {
-    pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-        let mut qwq = HashMap::new();
-        nums.iter().enumerate().fold(vec![0, 0], |ans, (j, &x)| {
-            if let Some(&i) = qwq.get(&(target - x)) {
-                vec![i, j as i32]
-            } else {
-                qwq.insert(x, j as i32);
-                ans
+    pub fn max_score(nums: Vec<i32>) -> i64 {
+        let n = nums.len();
+        let mut ans = 0;
+        for k in 0..n {
+            let mut tmp = 0;
+            let mut i = 0;
+            while i < n {
+                if (i == k) {
+                    i += 1;
+                    continue;
+                }
+                let mut j = (i + 1).gcd(tmp);
             }
-        })
+        }
     }
 }
 // @lc code=end
