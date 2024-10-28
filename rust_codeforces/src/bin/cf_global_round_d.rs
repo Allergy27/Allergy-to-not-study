@@ -13,7 +13,7 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let n = cin().parse::<usize>().unwrap();
+    let _ = cin().parse::<usize>().unwrap();
     let qwq = cin()
         .split_whitespace()
         .map(|s| s.parse().unwrap())
