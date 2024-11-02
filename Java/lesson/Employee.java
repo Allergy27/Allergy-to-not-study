@@ -5,10 +5,10 @@ public class Employee {
         Employees[] emps = new Employees[6];
         emps[0] = new Employees("20232882", "叶俊捷", 7000);
         emps[1] = new Managers("20232883", "叶捷俊", 6499, "软件开发部");
-        emps[2] = new Majordomo("20232884", "俊叶捷", 7000, 500);
+        emps[2] = new Director("20232884", "俊叶捷", 7000, 500);
         emps[3] = new Employees("20232885", "捷叶俊", 6799);
         emps[4] = new Managers("20232886", "捷俊叶", 7000, "系统维护部");
-        emps[5] = new Majordomo("20232887", "俊捷叶", 8000, 800);
+        emps[5] = new Director("20232887", "俊捷叶", 8000, 800);
         System.out.println("所有员工:");
         for (int i = 0; i < emps.length; i++) {
             emps[i].show();
@@ -51,13 +51,13 @@ class Managers extends Employees {
     }
 }
 
-class Majordomo extends Employees {
+class Director extends Employees {
     private double bonus;
 
-    public Majordomo() {
+    public Director() {
     }
 
-    public Majordomo(String number, String name, double salary, double bonus) {
+    public Director(String number, String name, double salary, double bonus) {
         super(number, name, salary);
         this.bonus = bonus;
     }

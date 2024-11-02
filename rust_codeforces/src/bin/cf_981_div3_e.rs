@@ -18,22 +18,19 @@ fn solve() {
         .split_whitespace()
         .map(|s| s.parse::<usize>().unwrap() - 1)
         .collect::<Vec<_>>();
-    let mut qaq = vec![false; n];
+    let mut qaq = vec![true; n]; //true表示还能连环
     let mut ans = 0;
     for i in 0..n {
-        // 没判断过
-        if !qaq[i] {
-            let mut cnt = 0;
-            let mut j = i;
-            //只要没判断过就一直找下去
-            while !qaq[j] {
-                qaq[j] = true;
-                j = qwq[j];
-                cnt += 1;
-            }
-            println!("{:?}", qaq);
-            ans += (cnt + 1) / 2 - 1
+        qaq[i] = false; //现在连上了
+        let mut cnt = 1;
+        let mut tmp = qwq[i];
+        //下一个还能连环就去访问
+        while qaq[tmp] {
+            qaq[tmp] = false;
+            tmp = qwq[tmp];
+            cnt += 1;
         }
+        ans += (cnt - 1) / 2;
     }
-    println!("{}", ans)
+    println!("{}", ans);
 }

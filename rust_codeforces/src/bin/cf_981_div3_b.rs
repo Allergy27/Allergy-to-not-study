@@ -17,7 +17,7 @@ fn solve() {
     for i in &mut qwq {
         *i = cin()
             .split_whitespace()
-            .map(|s| s.parse::<i32>().unwrap())
+            .map(|s| s.parse::<i64>().unwrap())
             .collect();
     }
     let mut le = vec![0; 2 * n];
@@ -32,5 +32,5 @@ fn solve() {
         }
     }
     // println!("{:?}", le);
-    println!("{}", le.iter().sum::<i32>());
+    println!("{}", le.iter().sum::<i64>());
 }

@@ -1,1 +1,0 @@
-{"name":"Local: cf_global_round_c","url":"d:\\Prectice_Contest\\rust_codeforces\\src\\bin\\cf_global_round_c.rs","tests":[{"id":1730042727767,"input":"6\n5\n6\n7\n8\n9\n10\n","output":"5\n7 \n7\n15\n9\n15 \n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Prectice_Contest\\rust_codeforces\\src\\bin\\cf_global_round_c.rs","group":"local","local":true}

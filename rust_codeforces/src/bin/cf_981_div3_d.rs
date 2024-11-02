@@ -16,7 +16,7 @@ fn solve() {
     let qwq = cin()
         .split_whitespace()
         .map(|s| s.parse().unwrap())
-        .collect::<Vec<i32>>();
+        .collect::<Vec<i64>>();
     let mut qaq = vec![0; n + 1];
     qaq[1] = qwq[0];
     for i in 1..n {
