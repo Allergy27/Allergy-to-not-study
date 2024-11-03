@@ -1,0 +1,1 @@
+{"name":"Local: d","url":"d:\\Prectice_Contest\\cpp\\flashmen\\prefix_sum\\d.cpp","tests":[{"id":1730553407739,"input":"4 2\n1 2 3 4\n","output":""},{"id":1730553475655,"input":"10 4\n-3 1 -4 1 -5 9 -2 6 -5 3\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Prectice_Contest\\cpp\\flashmen\\prefix_sum\\d.cpp","group":"local","local":true}

@@ -4,11 +4,7 @@
 //@data      2024/11/01 07:25:05
 
 use rand::Rng;
-fn cin() -> String {
-    let mut input = String::new();
-    std::io::stdin().read_line(&mut input).unwrap();
-    input.trim().to_string()
-}
+
 fn main() {
     let t = 1;
     //let t = cin().parse::<i32>().unwrap();
@@ -18,7 +14,7 @@ fn solve(n: usize, que: std::collections::VecDeque<usize>) -> u32 {
     let mut que = que.clone();
     let mut small = Vec::new();
     let mut big = Vec::new();
-    for i in 0..n {
+    for _ in 0..n {
         if que.back().unwrap() > que.front().unwrap() {
             small.push(que.pop_back().unwrap());
         } else {

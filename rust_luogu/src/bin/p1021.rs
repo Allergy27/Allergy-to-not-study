@@ -13,21 +13,17 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (n, k) = cin()
-        .split_whitespace()
-        .fold((0, 0), |x, y| (x.1, y.parse::<usize>().unwrap()));
+    let (n, k) = cin().split_whitespace().fold((0, 0), |x, y| (x.1, y.parse::<usize>().unwrap()));
     let mut qwq = vec![1];
     let ans = dfs(&mut qwq, n, k, n + 1);
     ans.1.iter().for_each(|x| print!("{} ", x));
     println!("\nMAX={}", ans.0);
 }
 fn dp(a: &[usize], n: usize) -> usize {
-    let mut f = vec![5270; 5270];
+    let mut f = [5270; 5270];
     a.iter().for_each(|&x| f[x] = 1);
     for i in 1.. {
-        a.iter()
-            .take_while(|t| i > **t)
-            .for_each(|x| f[i] = f[i].min(f[i - *x] + 1));
+        a.iter().take_while(|t| i > **t).for_each(|x| f[i] = f[i].min(f[i - *x] + 1));
         if f[i] > n as i32 {
             return i - 1;
         }
