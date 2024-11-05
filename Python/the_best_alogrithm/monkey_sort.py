@@ -19,7 +19,7 @@ def monkey_sort(arr):
 
 
 a = []
-for i in range(1,10):
+for i in range(1, 7):
     a.append(i)
 a.append(0)
 start_time = time.time()
