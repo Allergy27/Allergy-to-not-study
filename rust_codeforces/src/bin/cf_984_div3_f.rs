@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/p1027.rs
-//@data      2024/11/04 18:24:54
+//@workspace Prectice_Contest/cf_984_div3_f.rs
+//@data      2024/11/06 00:06:30
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,24 +52,28 @@ macro_rules! cin {
     }}
 }
 fn main() {
+    // let t = 1;
     let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (n, t, a, b) = cin!(f64, i64, i64, i64);
-
-    let mid_find = |a: (f64, f64), b: (f64, f64)| {
-        let x = (a.0 + b.0) / 2.0;
-        let y = (a.1 + b.1) / 2.0;
-        (x, y)
+    let xor = |x: i64| match x % 4 {
+        0 => x,
+        1 => 1,
+        2 => x + 1,
+        3 => 0,
+        _ => unreachable!(),
     };
-
-    let find_forth = |c1: (f64, f64), c2: (f64, f64), c3: (f64, f64)| {
-        let dis_1 = (c1.0 - c2.0) * (c1.0 - c2.0) + (c1.1 - c2.1) * (c1.1 - c2.1);
-        let dis_2 = (c1.0 - c3.0) * (c1.0 - c3.0) + (c1.1 - c3.1) * (c1.1 - c3.1);
-        let dis_3 = (c2.0 - c3.0) * (c2.0 - c3.0) + (c2.1 - c3.1) * (c2.1 - c3.1);
-        if dis_1 > dis_2 && dis_2 > dis_3 {
-            return;
-        }
-    };
+    let find = |l: i64, r: i64| xor(r) ^ xor(if l > 0 { l - 1 } else { 0 });
+    let (l, r, i, k) = cin!(i64, i64, i64, i64);
+    let qwq = find(l, r);
+    let stt = (l - k + ((1 << i) - 1)) >> i;
+    let end = (r - k) >> i;
+    if stt > end {
+        println!("{}", qwq);
+        return;
+    }
+    let n = end - stt + 1;
+    let res = (find(stt, end) << i) | if n % 2 == 1 { k } else { 0 };
+    println!("{}", qwq ^ res);
 }

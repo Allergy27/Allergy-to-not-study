@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/p1027.rs
-//@data      2024/11/04 18:24:54
+//@workspace Prectice_Contest/cf_984_div3_e.rs
+//@data      2024/11/05 23:59:15
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,24 +52,35 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    let t = cin!(i64);
+    let t = 1;
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (n, t, a, b) = cin!(f64, i64, i64, i64);
-
-    let mid_find = |a: (f64, f64), b: (f64, f64)| {
-        let x = (a.0 + b.0) / 2.0;
-        let y = (a.1 + b.1) / 2.0;
-        (x, y)
-    };
-
-    let find_forth = |c1: (f64, f64), c2: (f64, f64), c3: (f64, f64)| {
-        let dis_1 = (c1.0 - c2.0) * (c1.0 - c2.0) + (c1.1 - c2.1) * (c1.1 - c2.1);
-        let dis_2 = (c1.0 - c3.0) * (c1.0 - c3.0) + (c1.1 - c3.1) * (c1.1 - c3.1);
-        let dis_3 = (c2.0 - c3.0) * (c2.0 - c3.0) + (c2.1 - c3.1) * (c2.1 - c3.1);
-        if dis_1 > dis_2 && dis_2 > dis_3 {
-            return;
+    let (n, m, q) = cin!(usize, usize, i64);
+    let mut qwq = Vec::with_capacity(n);
+    for _ in 0..n {
+        qwq.push(cin!([i64; m]));
+    }
+    for i in 1..n {
+        for j in 0..m {
+            qwq[i][j] |= qwq[i - 1][j]
         }
-    };
+    }
+    for _ in 0..q {
+        let p = cin!(i64);
+        let (mut l, mut r) = (0, n as i64);
+        for _ in 0..p {
+            let (t, o, c) = cin!(usize, char, i64);
+            if o == '>' {
+                l = l.max(qwq.partition_point(|x| x[t - 1] <= c) as i64);
+            } else {
+                r = r.min(qwq.partition_point(|x| x[t - 1] < c) as i64)
+            }
+        }
+        if l >= r {
+            println!("-1");
+        } else {
+            println!("{}", l + 1);
+        }
+    }
 }
