@@ -58,50 +58,37 @@ fn main() {
 }
 
 fn solve() {
-    let (n, m, l, v) = cin!(usize, usize, i64, i64);
-    let mut qwq = vec![(0, 0); n];
-    let mut dp = vec![0; m + 2];
-
-    for owo in &mut qwq {
-        let (d, v0, acc) = cin!(i64, i64, i64);
-        if v0 > v {
-            if acc >= 0 {
-                *owo = (d, l);
-            } else {
-                *owo = (d, (v * v - v0 * v0 + 1) / (2 * acc) + d.min(l));
+    let (n, m, lim, v) = cin!(usize, usize, i64, i64);
+    let mut qwq = Vec::with_capacity(n);
+    for _ in 0..n {
+        let (d, v0, a) = cin!(i64, i64, i64);
+        match (a >= 0, v0 > v) {
+            (true, true) => qwq.push((d, lim)),
+            (false, true) => qwq.push((d, lim.min((v * v - v0 * v0 + 1) / (2 * a) + d))),
+            (true, false) => {
+                if a != 0 {
+                    qwq.push(((lim + 1).min((v * v - v0 * v0) / (2 * a) + d + 1), lim))
+                }
             }
-        } else if acc <= 0 {
-            *owo = (l + 1, l + 1);
-        } else {
-            *owo = ((v * v - v0 * v0) / (2 * acc) + d + 1.min(l + 1), l);
+            _ => (),
         }
     }
-    let mut p = cin!([i64; m]);
-    qwq.sort_by(|x, y| x.1.cmp(&y.1));
-    let mut i = 0;
-    let mut cnt = 0;
-    let mut left = 0;
-    p.push(l + 1);
-    let mut q = std::collections::VecDeque::new();
-    q.push_back(0);
-
-    for j in 0..=m {
-        while i < n && qwq[i].1 < p[j] {
-            if qwq[i].0 <= p[j - 1] {
-                cnt += 1;
-                left = left.max(qwq[i].0);
-            }
-            i += 1;
+    qwq.sort_unstable_by(|(a, _), (b, _)| a.cmp(b));
+    let find = cin!([i64; m]);
+    let mut ans = 0;
+    let mut pre = m + 1;
+    let mut cot = 0;
+    while let Some((l, r)) = qwq.pop() {
+        let fl = find.partition_point(|&x| x < l);
+        let fr = find.partition_point(|&x| x <= r);
+        if fl + 1 > fr || fr == 0 {
+            continue;
         }
-        while !q.is_empty() && p[*q.front().unwrap()] < left {
-            q.pop_front();
+        ans += 1;
+        if fl > pre || pre > fr - 1 {
+            cot += 1;
+            pre = fl;
         }
-        dp[j] = dp[*q.front().unwrap()] + 1;
-        while !q.is_empty() && dp[j] <= dp[*q.back().unwrap()] {
-            q.pop_back();
-        }
-        q.push_back(j);
     }
-    println!("{:?}", dp);
-    println!("{} {}", cnt, m + 1 - dp[m + 1]);
+    println!("{} {}", ans, m - cot);
 }

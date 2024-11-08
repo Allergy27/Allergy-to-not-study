@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/cf_984_div3_b.rs
-//@data      2024/11/05 23:08:46
+//@workspace Prectice_Contest/cf_972_div2_b2.rs
+//@data      2024/11/07 18:38:48
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -37,6 +37,7 @@ macro_rules! cin {
         };
         (s.next().unwrap()).parse::<$type>().unwrap()
     }};
+
     ($($type:ty),*) => {{
         let mut input = String::new();
         let mut s = loop{
@@ -50,20 +51,24 @@ macro_rules! cin {
         ($(s.next().unwrap().parse::<$type>().unwrap()),*)
     }}
 }
-
 fn main() {
     // let t = 1;
     let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
-
 fn solve() {
-    let (n, k) = cin!(usize, usize);
-    let mut a = vec![0; k];
-    for _ in 0..k {
-        let (p, v) = cin!(usize, i64);
-        a[p - 1] += v;
+    let (n, m, q) = cin!(i64, usize, usize);
+    let mut b = cin!([i64; m]);
+    b.sort_unstable();
+    let a = cin!([i64; q]);
+    for x in a {
+        let f = b.partition_point(|pos| pos <= &x);
+        if f == 0 {
+            println!("{}", b[f] - 1);
+        } else if f == m {
+            println!("{}", (n - b[f - 1]));
+        } else {
+            println!("{}", (b[f] - b[f - 1]) / 2);
+        }
     }
-    a.sort_by(|a, b| b.cmp(a));
-    println!("{}", a.iter().take(n).sum::<i64>());
 }
