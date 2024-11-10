@@ -8,29 +8,21 @@ fn cin() -> String {
     input.trim().to_string()
 }
 fn main() {
-    let t = cin().parse::<i32>().unwrap();
+    // let t = cin().parse::<i32>().unwrap();
+    let t = 1;
     (0..t).for_each(|_| solve());
 }
 
 fn solve() {
     let n = cin().parse::<usize>().unwrap();
-    let qwq = cin()
-        .split_whitespace()
-        .map(|s| s.parse::<usize>().unwrap() - 1)
-        .collect::<Vec<_>>();
-    let mut qaq = vec![true; n]; //true表示还能连环
-    let mut ans = 0;
-    for i in 0..n {
-        qaq[i] = false; //现在连上了
-        let mut cnt = 1;
-        let mut tmp = qwq[i];
-        //下一个还能连环就去访问
-        while qaq[tmp] {
-            qaq[tmp] = false;
-            tmp = qwq[tmp];
-            cnt += 1;
+    let qwq =
+        cin().split_whitespace().map(|s| s.parse::<usize>().unwrap() - 1).collect::<Vec<_>>();
+    let mut qaq: Vec<usize> = (0..n).collect();
+    for _ in 0..1000 {
+        for i in 0..n {
+            qaq[i] = qwq[qaq[i]];
         }
-        ans += (cnt - 1) / 2;
     }
-    println!("{}", ans);
+    let st = std::collections::HashSet::<usize>::from_iter(qaq);
+    println!("{}", st.len());
 }

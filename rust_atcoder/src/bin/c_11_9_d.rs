@@ -97,9 +97,10 @@ impl TreeList {
 
 fn solve() {
     let q = cin!(i64);
-    let mut tree = TreeList::new(q as usize + 1);
+    let mut tree = vec![0; q as usize];
     let mut r = 0;
-    let mut l = 1;
+    let mut l = 0;
+    let mut sum = 0;
     for _ in 0..q {
         //QWQ
         let input = cin!();
@@ -111,17 +112,20 @@ fn solve() {
         }
         let x = input.next().unwrap().parse::<i64>().unwrap();
         if a == 2 {
-            tree.range_add(l, r, x);
+            tree[r + 1] = -x;
+            tree[l] += x;
         } else if a == 3 {
             let mut tmp = 0;
             while l <= r {
-                if tree.point_query(l) < x {
+                if sum > x {
                     break;
                 }
                 tmp += 1;
                 l += 1;
+                sum += tree[l];
             }
             println!("{}", tmp);
+            println!("{:?}", tree);
         }
     }
 }
