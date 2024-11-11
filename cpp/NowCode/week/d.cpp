@@ -17,9 +17,9 @@ ll ll_inf = 0x3f3f3f3f3f3f3f3f;
 void solve() {
     int n, m;
     cin >> n >> m;
-    if (n <= m) {
+    if (n < m) {
         cout << "NO" << ln;
-    } else {
+    } else if (n != m) {
         cout << "YES" << ln;
         for (int i = 0; i < n - m - 1; i++) {
             cout << 1 << ' ';
@@ -27,6 +27,9 @@ void solve() {
         for (int i = 0; i < m + 1; i++) {
             cout << i % 2 + 1 << ' ';
         }
+    } else {
+        cout << "YES" << ln;
+        for (int i = 0; i < n; i++) cout << 1 << ' ';
     }
 }
 

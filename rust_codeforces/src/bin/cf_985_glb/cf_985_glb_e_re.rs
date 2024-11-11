@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/test.rs
-//@data      2024/11/10 22:47:37
+//@workspace Prectice_Contest/cf_985_glb_e_re.rs
+//@data      2024/11/11 04:02:22
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,65 +52,61 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    let t = 1;
-    //let t = cin!(i64);
-    (0..t).for_each(|_| solve());
+    // let t = 1;
+    let t = cin!(i64);
+    const MAX_N: usize = 500_027;
+    let mut pr = vec![0; MAX_N + 1];
+    let mut primes = Vec::new();
+    pr[1] = 1;
+    for i in 2..=MAX_N {
+        if pr[i] == 0 {
+            primes.push(i);
+        }
+        for p in &primes {
+            if p * i > MAX_N {
+                break;
+            }
+            //维护最小公因子
+            pr[i * p] = *p;
+            if i % p == 0 {
+                break;
+            }
+        }
+    }
+
+    (0..t).for_each(|_| solve(&pr));
 }
+fn solve(pr: &[usize]) {
+    let n = cin!(usize);
+    let qwq = cin!([usize; n]);
 
-struct TreeList {
-    data: Vec<i64>,
-    n: usize,
-}
+    let mut pf = 0;
 
-impl TreeList {
-    fn new(size: usize) -> Self {
-        TreeList {
-            data: vec![0; size + 1],
-            n: size,
+    for i in &qwq {
+        if pr[*i] == 0 {
+            pf = *i;
         }
     }
-
-    fn add(&mut self, idx: usize, value: i64) {
-        let mut i = idx as isize;
-        while i <= self.n as isize {
-            self.data[i as usize] += value;
-            i += i & -i;
+    if pf == 0 {
+        println!("2");
+    } else {
+        for i in qwq {
+            if i == pf {
+                continue;
+            }
+            if pr[i] == 0 {
+                println!("-1");
+                return;
+            } else if (i & 1) == 1 {
+                if i - pr[i] < 2 * pf {
+                    println!("-1");
+                    return;
+                }
+            } else if i < 2 * pf {
+                println!("-1");
+                return;
+            }
         }
-    }
-
-    fn sum(&self, idx: usize) -> i64 {
-        let mut i = idx as isize;
-        let mut result = 0;
-        while i > 0 {
-            result += self.data[i as usize];
-            i -= i & -i;
-        }
-        result
-    }
-
-    fn range_add(&mut self, left: usize, right: usize, value: i64) {
-        self.add(left, value);
-        self.add(right + 1, -value);
-    }
-
-    fn range_sum(&self, left: usize, right: usize) -> i64 {
-        self.sum(right) - self.sum(left - 1)
-    }
-}
-
-fn solve() {
-    let (n, m) = cin!(usize, i64);
-    let arr = cin!([i64; n]);
-    let mut qwq = TreeList::new(n);
-    for i in 0..n {
-        qwq.add(i + 1, arr[i]);
-    }
-    for i in 0..m {
-        let (op, a, b) = cin!(i64, i64, i64);
-        if op == 1 {
-            qwq.add(a as usize, b);
-        } else {
-            println!("{}", qwq.range_sum(a as usize, b as usize));
-        }
+        println!("{}", pf)
     }
 }

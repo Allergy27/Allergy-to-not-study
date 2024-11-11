@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/cf_985_glb_b_new.rs
-//@data      2024/11/10 13:58:05
+//@workspace Prectice_Contest/cf_984_div3_d_re.rs
+//@data      2024/11/11 05:30:21
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -57,17 +57,38 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let n = cin!(i64);
-    let qwq = cin!([i64; n]);
-    let mut dp = (0, -n, -n);
-    let f = |tmp: i64, x: i64| tmp + (x > tmp) as i64 - (x < tmp) as i64;
-    for x in qwq {
-        //2跳过后
-        dp.2 = f(dp.1, x).max(f(dp.2, x));
-        //1跳过时
-        dp.1 = dp.1.max(dp.0);
-        //0跳过前
-        dp.0 = f(dp.0, x);
+    let (n, m) = cin!(usize, usize);
+    let mut qwq = Vec::with_capacity(n);
+    for _ in 0..n {
+        qwq.push(cin!().chars().collect::<Vec<_>>())
     }
-    println!("{}", dp.1.max(dp.2));
+
+    let mut ans = 0;
+    for i in 0..(n / 2).min(m / 2) {
+        let mut s = Vec::new();
+        for x in i..m - i - 1 {
+            s.push(qwq[i][x])
+        }
+        for y in i..n - i - 1 {
+            s.push(qwq[y][m - i - 1])
+        }
+        for x_rev in (i + 1..m - i).rev() {
+            s.push(qwq[n - i - 1][x_rev])
+        }
+        for y_rev in (i + 1..n - i).rev() {
+            s.push(qwq[y_rev][i])
+        }
+        let t = s.len();
+
+        (0..t).for_each(|i| {
+            if s[i] == '1'
+                && s[(i + 1) % t] == '5'
+                && s[(i + 2) % t] == '4'
+                && s[(i + 3) % t] == '3'
+            {
+                ans += 1
+            }
+        });
+    }
+    println!("{}", ans);
 }

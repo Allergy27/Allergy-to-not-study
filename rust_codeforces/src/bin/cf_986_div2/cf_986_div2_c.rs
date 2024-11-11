@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/test.rs
-//@data      2024/11/10 22:47:37
+//@workspace Prectice_Contest/cf_986_div2_c.rs
+//@data      2024/11/11 00:41:28
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,65 +52,49 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    let t = 1;
-    //let t = cin!(i64);
+    // let t = 1;
+    let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
-
-struct TreeList {
-    data: Vec<i64>,
-    n: usize,
-}
-
-impl TreeList {
-    fn new(size: usize) -> Self {
-        TreeList {
-            data: vec![0; size + 1],
-            n: size,
-        }
-    }
-
-    fn add(&mut self, idx: usize, value: i64) {
-        let mut i = idx as isize;
-        while i <= self.n as isize {
-            self.data[i as usize] += value;
-            i += i & -i;
-        }
-    }
-
-    fn sum(&self, idx: usize) -> i64 {
-        let mut i = idx as isize;
-        let mut result = 0;
-        while i > 0 {
-            result += self.data[i as usize];
-            i -= i & -i;
-        }
-        result
-    }
-
-    fn range_add(&mut self, left: usize, right: usize, value: i64) {
-        self.add(left, value);
-        self.add(right + 1, -value);
-    }
-
-    fn range_sum(&self, left: usize, right: usize) -> i64 {
-        self.sum(right) - self.sum(left - 1)
-    }
-}
-
 fn solve() {
-    let (n, m) = cin!(usize, i64);
-    let arr = cin!([i64; n]);
-    let mut qwq = TreeList::new(n);
+    let (n, m, v) = cin!(usize, usize, i64);
+    let qwq = cin!([i64; n]);
+    let mut qaq = vec![0; n + 1];
     for i in 0..n {
-        qwq.add(i + 1, arr[i]);
+        qaq[i + 1] = qaq[i] + qwq[i];
     }
-    for i in 0..m {
-        let (op, a, b) = cin!(i64, i64, i64);
-        if op == 1 {
-            qwq.add(a as usize, b);
-        } else {
-            println!("{}", qwq.range_sum(a as usize, b as usize));
+
+    // 定义区间和查询函数
+    let querry = |l: usize, r: usize| qaq[r] - qaq[l];
+
+    // 构建 f 数组，从左往右找到每个满足条件的子区间右端点
+    let mut f = vec![0i64; m + 1];
+    let mut j = 0;
+    for i in 1..=m {
+        while j as usize <= n && querry(f[i - 1] as usize, j as usize) < v {
+            j += 1;
+        }
+        f[i] = j;
+    }
+
+    // 构建 g 数组，从右往左找到每个满足条件的子区间左端点
+    let mut g = vec![n as i64; m + 1];
+    let mut j = n as i64;
+    for i in 1..=m {
+        while j >= 0 && querry(j as usize, g[i - 1] as usize) < v {
+            j -= 1;
+        }
+        g[i] = j;
+    }
+
+    // 查找满足条件的最大区间和
+    let mut ans = -1;
+    for i in 0..=m {
+        if f[i] <= n as i64 && g[m - i] >= 0 && f[i] <= g[m - i] {
+            ans = ans.max(querry(f[i] as usize, g[m - i] as usize));
         }
     }
+
+    // 输出结果
+    println!("{}", ans);
 }

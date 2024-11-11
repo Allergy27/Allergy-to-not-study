@@ -14,10 +14,7 @@ fn main() {
 
 fn solve() {
     let n = cin().parse::<usize>().unwrap();
-    let qwq = cin()
-        .split_whitespace()
-        .map(|s| s.parse::<usize>().unwrap() - 1)
-        .collect::<Vec<_>>();
+    let qwq = cin().split_whitespace().map(|s| s.parse::<usize>().unwrap() - 1).collect::<Vec<_>>();
     let mut qaq = vec![true; n]; //true表示还能连环
     let mut ans = 0;
     for i in 0..n {

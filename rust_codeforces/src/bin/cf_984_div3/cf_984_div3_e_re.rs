@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/cf_985_glb_c.rs
-//@data      2024/11/09 23:29:37
+//@workspace Prectice_Contest/cf_984_div3_e_re.rs
+//@data      2024/11/11 05:30:56
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,19 +52,38 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
+    let t = 1;
+    // let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
-
 fn solve() {
-    let n = cin!(i64);
-    let check = |a: i64, x: i64| a + (a < x) as i64 - (a > x) as i64;
-    let mut dp = (0, -n, -n);
-    for x in cin!([i64; n]) {
-        dp.2 = check(dp.1, x).max(check(dp.2, x));
-        dp.1 = dp.1.max(dp.0);
-        dp.0 = check(dp.0, x);
+    let (n, k, q) = cin!(usize, usize, usize);
+    let mut qwq = vec![Vec::new(); n];
+    for i in 0..n {
+        let tmp = cin!([i64; k]);
+        qwq[i] = tmp;
+        if i > 0 {
+            for j in 0..k {
+                qwq[i][j] |= qwq[i - 1][j]
+            }
+        }
     }
-    println!("{}", dp.1.max(dp.2));
+    for _ in 0..q {
+        let t = cin!(usize);
+        let mut l = 0;
+        let mut r = n;
+        for _ in 0..t {
+            let (a, op, b) = cin!(usize, char, i64);
+            if op == '<' {
+                r = r.min(qwq.partition_point(|x| x[a - 1] < b));
+            } else {
+                l = l.max(qwq.partition_point(|x| x[a - 1] <= b));
+            }
+        }
+        if l >= r {
+            println!("-1")
+        } else {
+            println!("{}", l + 1)
+        }
+    }
 }
