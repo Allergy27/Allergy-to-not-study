@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/11_10_4.rs
-//@data      2024/11/10 10:48:56
+//@workspace Prectice_Contest/cf_985_glb_b.rs
+//@data      2024/11/11 13:11:47
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,48 +52,26 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    let t = 1;
-    //let t = cin!(i64);
+    // let t = 1;
+    let t = cin!(i64);
+    (0..t).for_each(|_| solve());
 }
-
-struct Solution;
-impl Solution {
-    pub fn count_k_reducible_numbers(s: String, k: i32) -> i32 {
-        let n = s.len();
-        let bitc = |x: usize| {
-            let mut cnt = 0;
-            let mut x = x;
-            while x > 0 {
-                cnt += x & 1;
-                x >>= 1;
-            }
-            cnt
-        };
-        let mut dp = vec![0; n + 1];
-        let mut pre = vec![0; n + 1];
-        for i in 2..=n {
-            pre[i] = pre[bitc(i)] + 1;
-        }
-        const MOD: usize = 1_000_000_007;
-        let s = s.as_bytes();
-        let mut cur = 0;
-        for i in 0..n {
-            for j in (0..i).rev() {
-                dp[j + 1] += dp[j];
-                dp[j] %= MOD;
-            }
-            if s[i] == b'1' {
-                dp[cur] += 1;
-                dp[cur] %= MOD;
-            }
-            cur += (s[i] - b'0') as usize;
-        }
-        let mut ans = 0;
-        for i in 0..=n {
-            if pre[i] < k as usize {
-                ans += dp[i];
-            }
-        }
-        ((ans - 1) % MOD) as i32
+fn solve() {
+    let n = cin!(usize);
+    let a = cin!().chars().collect::<Vec<_>>();
+    let b = cin!().chars().collect::<Vec<_>>();
+    let mut cot = [0, 0];
+    for i in a {
+        cot[(i as u8 - b'0') as usize] += 1;
     }
+    for i in b {
+        let tmp = (i as u8 - b'0') as usize;
+        if cot[tmp] > 0 && cot[tmp ^ 1] > 0 {
+            cot[tmp ^ 1] -= 1;
+        } else {
+            println!("NO");
+            return;
+        }
+    }
+    println!("YES");
 }

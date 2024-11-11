@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/cf_985_glb_a.rs
-//@data      2024/11/09 22:35:47
+//@workspace Prectice_Contest/1352_G.rs
+//@data      2024/11/11 10:20:00
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -57,20 +57,20 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (l, r, k) = cin!(i64, i64, i64);
-    if k == 1 {
-        println!("{}", r - l + 1);
-        return;
-    }
-    let mut a = l;
-    let mut b = r;
-    while a < b {
-        let mid = (a + b) / 2;
-        if mid * k > r {
-            b = mid;
-        } else {
-            a = mid + 1;
+    let n = cin!(usize);
+    let mut qwq = vec![0; n];
+    if n < 4 {
+        println!("-1")
+    } else {
+        for i in (1..=n).rev() {
+            if i & 1 == 1 {
+                print!("{} ", i);
+            }
         }
+        print!("4 2 ");
+        for i in (6..=n).step_by(2) {
+            print!("{} ", i)
+        }
+        println!()
     }
-    println!("{}", a - l);
 }

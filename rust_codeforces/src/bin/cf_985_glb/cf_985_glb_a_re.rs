@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
 //@workspace Prectice_Contest/cf_985_glb_a.rs
-//@data      2024/11/09 22:35:47
+//@data      2024/11/11 12:51:46
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -58,19 +58,5 @@ fn main() {
 }
 fn solve() {
     let (l, r, k) = cin!(i64, i64, i64);
-    if k == 1 {
-        println!("{}", r - l + 1);
-        return;
-    }
-    let mut a = l;
-    let mut b = r;
-    while a < b {
-        let mid = (a + b) / 2;
-        if mid * k > r {
-            b = mid;
-        } else {
-            a = mid + 1;
-        }
-    }
-    println!("{}", a - l);
+    println!("{}", ((r / k) - l + 1).max(0))
 }

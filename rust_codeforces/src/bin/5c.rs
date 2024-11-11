@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/11_10_1.rs
-//@data      2024/11/10 10:29:35
+//@workspace Prectice_Contest/5c.rs
+//@data      2024/11/11 11:06:06
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -54,30 +54,43 @@ macro_rules! cin {
 fn main() {
     let t = 1;
     //let t = cin!(i64);
+    (0..t).for_each(|_| solve());
 }
-struct Solution;
-impl Solution {
-    pub fn max_increasing_subarrays(nums: Vec<i32>) -> i32 {
-        let n = nums.len();
-        let mut dp = vec![1; n];
-        for i in 1..n {
-            if nums[i] > nums[i - 1] {
-                dp[i] = dp[i - 1] + 1;
-            } else {
-                dp[i] = 1;
-            }
+fn solve() {
+    let s = cin!();
+    let mut st = Vec::new();
+    let n = s.len();
+    let mut qwq = vec![false; n];
+    for (i, x) in s.chars().enumerate() {
+        if x == '(' {
+            st.push(i)
+        } else if let Some(top) = st.pop() {
+            //将匹配的两个标1
+            qwq[top] = true;
+            qwq[i] = true;
         }
-
-        let mut ans = *dp.iter().max().unwrap() / 2;
-        let mut res = Vec::new();
-        for i in 0..n {
-            if i == n - 1 || dp[i] > dp[i + 1] {
-                res.push(dp[i]);
-            }
+    }
+    let mut cot = 0;
+    let mut mx = 0;
+    let mut mp = std::collections::HashMap::new();
+    for ck in qwq {
+        if ck {
+            cot += 1;
+            continue;
+        } else if cot >= mx {
+            mx = cot;
+            *mp.entry(mx).or_insert(0) += 1;
         }
-        for i in 1..res.len() {
-            ans = ans.max(res[i].min(res[i - 1]))
-        }
-        ans
+        cot = 0;
+    }
+    if cot >= mx {
+        mx = cot;
+        *mp.entry(mx).or_insert(0) += 1;
+    }
+    if mx == 0 {
+        //特判 0 1
+        println!("0 1");
+    } else {
+        println!("{} {}", mx, mp.get(&mx).unwrap())
     }
 }
