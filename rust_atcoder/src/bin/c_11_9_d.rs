@@ -56,44 +56,6 @@ fn main() {
     //`let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
-struct TreeList {
-    tree: Vec<i64>,
-    n: usize,
-}
-
-impl TreeList {
-    fn new(n: usize) -> Self {
-        TreeList {
-            tree: vec![0; n + 1],
-            n,
-        }
-    }
-
-    fn add(&mut self, mut i: usize, x: i64) {
-        while i <= self.n {
-            self.tree[i] += x;
-            i += i & i.wrapping_neg();
-        }
-    }
-
-    fn sum(&self, mut i: usize) -> i64 {
-        let mut s = 0;
-        while i > 0 {
-            s += self.tree[i];
-            i -= i & i.wrapping_neg();
-        }
-        s
-    }
-
-    fn range_add(&mut self, l: usize, r: usize, x: i64) {
-        self.add(l, x);
-        self.add(r + 1, -x);
-    }
-
-    fn point_query(&self, i: usize) -> i64 {
-        self.sum(i)
-    }
-}
 
 fn solve() {
     let q = cin!(i64);

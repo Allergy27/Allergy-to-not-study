@@ -7,7 +7,7 @@
       "command": "javac",
       "args": [
         "-d",
-        "${fileDirname}/build", // 将编译后的文件输出到同级目录下的 build 文件夹
+        "${fileDirname}/build",
         "${file}"
       ],
       "group": {

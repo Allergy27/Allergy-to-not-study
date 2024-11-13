@@ -144,8 +144,7 @@ fn solve() {
 
         // 尝试合并左侧相邻的矩形
         if min_x > 0 {
-            let (mut left_x1, left_y1, left_x2, left_y2) = (0, min_y, min_x - 1, max_y);
-            let (a_left, b_left) = count_fish(left_x1, left_y1, left_x2, left_y2);
+            let (left_x1, left_y1, left_x2, left_y2) = (0, min_y, min_x - 1, max_y);
             let total_a = count_fish(left_x1, left_y1, max_x, max_y).0;
             let total_b = count_fish(left_x1, left_y1, max_x, max_y).1;
             let score = total_a - total_b;
@@ -160,8 +159,7 @@ fn solve() {
 
         // 尝试合并右侧相邻的矩形
         if max_x < 100000 {
-            let (right_x1, right_y1, mut right_x2, right_y2) = (max_x + 1, min_y, 100000, max_y);
-            let (a_right, b_right) = count_fish(right_x1, right_y1, right_x2, right_y2);
+            let (right_x1, right_y1, right_x2, right_y2) = (max_x + 1, min_y, 100000, max_y);
             let total_a = count_fish(min_x, min_y, right_x2, max_y).0;
             let total_b = count_fish(min_x, min_y, right_x2, max_y).1;
             let score = total_a - total_b;
@@ -176,8 +174,7 @@ fn solve() {
 
         // 尝试合并下方相邻的矩形
         if min_y > 0 {
-            let (bottom_x1, mut bottom_y1, bottom_x2, bottom_y2) = (min_x, 0, max_x, min_y - 1);
-            let (a_bottom, b_bottom) = count_fish(bottom_x1, bottom_y1, bottom_x2, bottom_y2);
+            let (bottom_x1, bottom_y1, bottom_x2, bottom_y2) = (min_x, 0, max_x, min_y - 1);
             let total_a = count_fish(min_x, bottom_y1, max_x, max_y).0;
             let total_b = count_fish(min_x, bottom_y1, max_x, max_y).1;
             let score = total_a - total_b;
@@ -192,8 +189,7 @@ fn solve() {
 
         // 尝试合并上方相邻的矩形
         if max_y < 100000 {
-            let (top_x1, top_y1, top_x2, mut top_y2) = (min_x, max_y + 1, max_x, 100000);
-            let (a_top, b_top) = count_fish(top_x1, top_y1, top_x2, top_y2);
+            let (top_x1, top_y1, top_x2, top_y2) = (min_x, max_y + 1, max_x, 100000);
             let total_a = count_fish(min_x, min_y, max_x, top_y2).0;
             let total_b = count_fish(min_x, min_y, max_x, top_y2).1;
             let score = total_a - total_b;

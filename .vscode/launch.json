@@ -19,7 +19,6 @@
       "args": [],
       "console": "externalTerminal",
       "preLaunchTask": "GoBuild"
-      // "showLog": true
     },
     {
       "name": "cpp_Debug",

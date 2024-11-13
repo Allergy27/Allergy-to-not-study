@@ -11,8 +11,20 @@ fn main() {
 }
 
 fn qsort<T: Ord + Clone + Copy>(xs: &mut [T]) -> Vec<T> {
-    if xs.len() <= 1 { return xs.to_vec(); }
-    let small = qsort(&mut xs[1..].iter().filter_map(|x|if x <= &xs[0]{ Some(*x) }else{ None }).collect::<Vec<_>>());
-    let big = qsort(&mut xs[1..].iter().filter_map(|x|if x > &xs[0]{ Some(*x) }else{ None }).collect::<Vec<_>>());
+    if xs.len() <= 1 {
+        return xs.to_vec();
+    }
+    let small = qsort(
+        &mut xs[1..]
+            .iter()
+            .filter_map(|x| if x <= &xs[0] { Some(*x) } else { None })
+            .collect::<Vec<_>>(),
+    );
+    let big = qsort(
+        &mut xs[1..]
+            .iter()
+            .filter_map(|x| if x > &xs[0] { Some(*x) } else { None })
+            .collect::<Vec<_>>(),
+    );
     small.into_iter().chain([xs[0]]).chain(big).collect()
 }
