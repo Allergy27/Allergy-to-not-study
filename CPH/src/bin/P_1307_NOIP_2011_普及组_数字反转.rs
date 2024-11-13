@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/1352_G.rs
-//@data      2024/11/11 10:20:00
+//@workspace bin/P_1307_NOIP_2011_普及组_数字反转.rs
+//@data      2024/11/12 13:59:52
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,24 +52,25 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
+    let t = 1;
+    //let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let n = cin!(usize);
-    if n < 4 {
-        println!("-1")
-    } else {
-        for i in (1..=n).rev() {
-            if i & 1 == 1 {
-                print!("{} ", i);
-            }
+    let s = cin!();
+    println!(
+        "{}",
+        if s.starts_with('-') {
+            -s.chars()
+                .skip(1)
+                .collect::<String>()
+                .chars()
+                .rev()
+                .collect::<String>()
+                .parse::<i64>()
+                .unwrap()
+        } else {
+            s.chars().rev().collect::<String>().parse::<i64>().unwrap()
         }
-        print!("4 2 ");
-        for i in (6..=n).step_by(2) {
-            print!("{} ", i)
-        }
-        println!()
-    }
+    )
 }

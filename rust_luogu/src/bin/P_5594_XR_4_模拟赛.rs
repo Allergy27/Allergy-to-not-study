@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/1352_G.rs
-//@data      2024/11/11 10:20:00
+//@workspace bin/P_5594_XR_4_模拟赛.rs
+//@data      2024/11/12 19:21:33
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,24 +52,17 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
+    let t = 1;
+    //let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let n = cin!(usize);
-    if n < 4 {
-        println!("-1")
-    } else {
-        for i in (1..=n).rev() {
-            if i & 1 == 1 {
-                print!("{} ", i);
-            }
+    let (n, m, k) = cin!(usize, usize, usize);
+    let mut qwq = vec![std::collections::HashSet::new(); k];
+    for _ in 0..n {
+        for (i, x) in cin!([usize; m]).into_iter().enumerate() {
+            qwq[x - 1].insert(i);
         }
-        print!("4 2 ");
-        for i in (6..=n).step_by(2) {
-            print!("{} ", i)
-        }
-        println!()
     }
+    qwq.iter().for_each(|x| print!("{} ", x.len()));
 }

@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/1352_G.rs
-//@data      2024/11/11 10:20:00
+//@workspace bin/D_Longest_Max_Min_Subsequence.rs
+//@data      2024/11/12 14:38:33
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,24 +52,10 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
-    (0..t).for_each(|_| solve());
+    let t = 1;
+    //let t = cin!(i64);
+    (0..t).for_each(|_|solve());
 }
 fn solve() {
-    let n = cin!(usize);
-    if n < 4 {
-        println!("-1")
-    } else {
-        for i in (1..=n).rev() {
-            if i & 1 == 1 {
-                print!("{} ", i);
-            }
-        }
-        print!("4 2 ");
-        for i in (6..=n).step_by(2) {
-            print!("{} ", i)
-        }
-        println!()
-    }
+
 }

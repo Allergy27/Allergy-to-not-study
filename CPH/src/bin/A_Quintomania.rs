@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/1352_G.rs
-//@data      2024/11/11 10:20:00
+//@workspace bin/A_Quintomania.rs
+//@data      2024/11/12 14:39:24
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -57,19 +57,14 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let n = cin!(usize);
-    if n < 4 {
-        println!("-1")
-    } else {
-        for i in (1..=n).rev() {
-            if i & 1 == 1 {
-                print!("{} ", i);
-            }
+    let n = cin!(i64);
+    let qwq = cin!([i64; n]);
+    for i in 1..n as usize {
+        let s = qwq[i].abs_diff(qwq[i - 1]);
+        if s != 5 && s != 7 {
+            println!("NO");
+            return;
         }
-        print!("4 2 ");
-        for i in (6..=n).step_by(2) {
-            print!("{} ", i)
-        }
-        println!()
     }
+    println!("YES");
 }

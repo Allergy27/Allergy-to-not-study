@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/1352_G.rs
-//@data      2024/11/11 10:20:00
+//@workspace Prectice_Contest/p1170.rs
+//@data      2024/11/13 07:57:19
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -57,19 +57,20 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let n = cin!(usize);
-    if n < 4 {
-        println!("-1")
+    let (x1, y1) = cin!(usize, usize);
+    let (x2, y2) = cin!(usize, usize);
+    let gcd = |a: usize, b: usize| {
+        let (mut x, mut y) = (a, b);
+        while y > 0 {
+            let t = y;
+            y = x % y;
+            x = t;
+        }
+        x
+    };
+    if gcd(x1.abs_diff(x2), y1.abs_diff(y2)) <= 1 {
+        println!("no");
     } else {
-        for i in (1..=n).rev() {
-            if i & 1 == 1 {
-                print!("{} ", i);
-            }
-        }
-        print!("4 2 ");
-        for i in (6..=n).step_by(2) {
-            print!("{} ", i)
-        }
-        println!()
+        println!("yes");
     }
 }
