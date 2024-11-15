@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace bin/1669G.rs
-//@data      2024/11/13 17:46:25
+//@workspace PrecticeContest/cf_987_div2_a.rs
+//@data      2024/11/15 20:35:01
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -57,27 +57,14 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (n, m) = cin!(usize, usize);
-    let mut qwq = Vec::with_capacity(n);
-    for _ in 0..n {
-        qwq.push(cin!().chars().collect::<Vec<_>>());
-    }
-    for i in 0..m {
-        let mut l = n as i32 - 1;
-        for r in (0..n).rev() {
-            if l == 0 {
-                break;
-            }
-            if qwq[r][i] == 'o' {
-                l = r as i32 - 1;
-            } else if qwq[r][i] == '*' {
-                let tmp = qwq[l as usize][i];
-                qwq[l as usize][i] = '*';
-                qwq[r][i] = tmp;
-                l -= 1;
-            }
+    let n = cin!(usize);
+    let p = cin!([i32; n]);
+    let mut flag = "YES";
+    for (i, elem) in p.iter().enumerate() {
+        if elem.abs_diff(i as i32 + 1) > 1 {
+            flag = "NO";
+            break;
         }
     }
-    qwq.iter().for_each(|x| println!("{}", x.iter().collect::<String>()));
-    println!();
+    println!("{flag}");
 }

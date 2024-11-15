@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace bin/1669G.rs
-//@data      2024/11/13 17:46:25
+//@workspace PrecticeContest/cf_987_div2_c.rs
+//@data      2024/11/15 21:40:19
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -51,33 +51,27 @@ macro_rules! cin {
         ($(s.next().unwrap().parse::<$type>().unwrap()),*)
     }}
 }
+
 fn main() {
     // let t = 1;
     let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
+
 fn solve() {
-    let (n, m) = cin!(usize, usize);
-    let mut qwq = Vec::with_capacity(n);
-    for _ in 0..n {
-        qwq.push(cin!().chars().collect::<Vec<_>>());
-    }
-    for i in 0..m {
-        let mut l = n as i32 - 1;
-        for r in (0..n).rev() {
-            if l == 0 {
-                break;
-            }
-            if qwq[r][i] == 'o' {
-                l = r as i32 - 1;
-            } else if qwq[r][i] == '*' {
-                let tmp = qwq[l as usize][i];
-                qwq[l as usize][i] = '*';
-                qwq[r][i] = tmp;
-                l -= 1;
-            }
+    let n = cin!(usize);
+    if n % 2 == 0 {
+        for i in 0..n / 2 {
+            print!("{} {} ", i + 1, i + 1);
         }
+        println!()
+    } else if n < 27 {
+        println!("-1");
+    } else {
+        print!("1 2 2 3 3 4 4 5 5 1 6 6 7 7 8 8 9 9 10 10 11 11 12 13 13 1 12 ");
+        for i in 14..=n / 2 {
+            print!("{} {} ", i, i);
+        }
+        println!()
     }
-    qwq.iter().for_each(|x| println!("{}", x.iter().collect::<String>()));
-    println!();
 }

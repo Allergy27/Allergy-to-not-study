@@ -112,7 +112,7 @@ fn solve() {
         // st.push(cin!(usize, i64, usize))
     }
 
-    let sov1 = |m: usize, qwq: &Vec<_>, st: &Vec<(usize, i64, usize)>| {
+    let sov1 = |qwq: &Vec<_>, st: &Vec<(usize, i64, usize)>| {
         let st = st.clone();
         // st.sort_unstable_by(|a, b| b.0.cmp(&a.0));
         let lim = qwq[0];
@@ -135,7 +135,7 @@ fn solve() {
             dp[i] = dp[i].max(dp[i - t] + w);
         }
     }
-    let ans1 = sov1(m, &qwq, &st);
+    let ans1 = sov1(&qwq, &st);
     if dp[qwq[0] - 1] != ans1 {
         println!("{} {}", dp[qwq[0] - 1], ans1);
         println!("arr :{:?}", (n, m, qwq, st));

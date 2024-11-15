@@ -58,7 +58,7 @@ fn main() {
 fn solve() {
     let (n, m, x) = cin!(usize, usize, usize);
     let mut qwq = Vec::with_capacity(n);
-    for i in 0..n {
+    for _ in 0..n {
         qwq.push(cin!([i32; m + 1]));
     }
     let dfs = || {

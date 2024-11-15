@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace bin/1669G.rs
-//@data      2024/11/13 17:46:25
+//@workspace PrecticeContest/p1433.rs
+//@data      2024/11/14 21:32:18
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,32 +52,44 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
+    let t = 1;
+    //let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (n, m) = cin!(usize, usize);
-    let mut qwq = Vec::with_capacity(n);
+    let n = cin!(usize);
+    let mut qwq = vec![vec![0.0; n]; n];
+    let mut point = Vec::with_capacity(n);
     for _ in 0..n {
-        qwq.push(cin!().chars().collect::<Vec<_>>());
+        point.push(cin!(f64, f64));
     }
-    for i in 0..m {
-        let mut l = n as i32 - 1;
-        for r in (0..n).rev() {
-            if l == 0 {
-                break;
+    let mut dp = vec![vec![f64::INFINITY; n]; 1 << n];
+    for i in 0..n {
+        let x1 = point[i].0;
+        let y1 = point[i].1;
+        for j in i + 1..n {
+            let x2 = point[j].0;
+            let y2 = point[j].1;
+            qwq[i][j] = ((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)).sqrt();
+            qwq[j][i] = qwq[i][j];
+        }
+        dp[1 << i][i] = (x1 * x1 + y1 * y1).sqrt();
+    }
+    for status in 0..1 << n {
+        for i in 0..n {
+            if status & (1 << i) == 0 {
+                continue;
             }
-            if qwq[r][i] == 'o' {
-                l = r as i32 - 1;
-            } else if qwq[r][i] == '*' {
-                let tmp = qwq[l as usize][i];
-                qwq[l as usize][i] = '*';
-                qwq[r][i] = tmp;
-                l -= 1;
+            for j in 0..n {
+                if status & (1 << j) == 0 || i == j {
+                    continue;
+                }
+                dp[status][i] = dp[status][i].min(dp[status - (1 << i)][j] + qwq[i][j])
             }
         }
     }
-    qwq.iter().for_each(|x| println!("{}", x.iter().collect::<String>()));
-    println!();
+    println!(
+        "{:.2}",
+        dp[(1 << n) - 1].iter().fold(f64::INFINITY, |ans, x| { ans.min(*x) })
+    )
 }

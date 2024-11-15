@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace bin/1669G.rs
-//@data      2024/11/13 17:46:25
+//@workspace PrecticeContest/p2010.rs
+//@data      2024/11/13 20:08:20
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,32 +52,33 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
+    let t = 1;
+    // let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (n, m) = cin!(usize, usize);
-    let mut qwq = Vec::with_capacity(n);
-    for _ in 0..n {
-        qwq.push(cin!().chars().collect::<Vec<_>>());
-    }
-    for i in 0..m {
-        let mut l = n as i32 - 1;
-        for r in (0..n).rev() {
-            if l == 0 {
-                break;
-            }
-            if qwq[r][i] == 'o' {
-                l = r as i32 - 1;
-            } else if qwq[r][i] == '*' {
-                let tmp = qwq[l as usize][i];
-                qwq[l as usize][i] = '*';
-                qwq[r][i] = tmp;
-                l -= 1;
-            }
+    let nrev = |x: usize| {
+        let mut tmp = 0;
+        let mut cot = x;
+        while cot > 0 {
+            tmp = tmp * 10 + cot % 10;
+            cot /= 10;
         }
-    }
-    qwq.iter().for_each(|x| println!("{}", x.iter().collect::<String>()));
-    println!();
+        tmp
+    };
+    let check = |year: usize, res: usize| {
+        let mut day_limit = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        day_limit[1] += if year % 400 == 0 || year % 100 != 0 && year % 4 == 0 { 1 } else { 0 };
+        0 < res / 100 && res / 100 <= 12 && res % 100 <= day_limit[res / 100 - 1]
+    };
+
+    assert_eq!(4201, nrev(1024));
+    let a = cin!(usize);
+    let b = cin!(usize);
+    let ay = a / 10000;
+    let by = b / 10000;
+    let ans = (ay..=by).fold(0, |ans, x| {
+        ans + (check(x, nrev(x)) && x * 10000 + nrev(x) >= a && x * 10000 + nrev(x) <= b) as usize
+    });
+    println!("{ans}");
 }

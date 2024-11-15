@@ -1,4 +1,8 @@
 {
     "cph.language.rust.Args": "--out-dir ${fileDirname}/../../target/debug",
-    "cph.general.saveLocation": "D:\\PrecticeContest\\CPH\\target\\debug\\tmp"
+    "cph.general.saveLocation": "D:\\PrecticeContest\\CPH\\target\\debug\\tmp",
+    "files.associations": {
+        "*.c": "c",
+        "iostream": "cpp"
+    }
 }
