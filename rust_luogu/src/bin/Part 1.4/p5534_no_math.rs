@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace PrecticeContest/cf_987_div2_a.rs
-//@data      2024/11/15 20:35:01
+//@workspace PrecticeContest/p5534_no_math.rs
+//@data      2024/11/16 03:06:48
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,25 +52,19 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
+    let t = 1;
+    //let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let n = cin!(usize);
-    let h = cin!([usize; n]);
-    let ans = lis(h);
-    println!("{}", n - ans.len());
-}
-
-fn lis<T: Ord + Copy>(nums: Vec<T>) -> Vec<T> {
-    nums.iter().fold(vec![], |mut x, &y| {
-        if x.is_empty() || *x.last().unwrap() <= y {
-            x.push(y)
-        } else {
-            let i = x.partition_point(|&v| v <= y);
-            x[i] = y;
-        }
-        x
-    })
+    let (mut a, b, c) = cin!(i64, i64, i64);
+    let d = b - a;
+    a -= d;
+    let ans = (0..c)
+        .map(|_| {
+            a += d;
+            a
+        })
+        .sum::<i64>();
+    println!("{ans}")
 }

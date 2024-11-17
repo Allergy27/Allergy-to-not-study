@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/cf_986_div2_c.rs
-//@data      2024/11/11 00:41:28
+//@workspace PrecticeContest/camp_day_1_a.rs
+//@data      2024/11/16 11:01:41
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,45 +52,53 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
+    let t = 1;
+    //let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
+fn seg(l: i64, r: i64) -> usize {
+    assert!(l >= 0 && r >= l, "Invalid range!");
+
+    // Step 1: 普通埃氏筛法筛选出小于 sqrt(r) 的所有素数
+    let limit = (r as f64).sqrt().ceil() as i64;
+    let mut is_prime = vec![true; (limit + 1) as usize];
+    is_prime[0] = false;
+    if limit > 1 {
+        is_prime[1] = false;
+    }
+
+    for i in 2..=limit {
+        if is_prime[i as usize] {
+            for j in (i * i..=limit).step_by(i as usize) {
+                is_prime[j as usize] = false;
+            }
+        }
+    }
+
+    // 获取小范围内的素数
+    let primes: Vec<i64> = (2..=limit).filter(|&x| is_prime[x as usize]).collect();
+
+    // Step 2: 初始化区间 [l, r] 的标记
+    let size = (r - l + 1) as usize;
+    let mut segment = vec![true; size];
+
+    // Step 3: 标记区间内的非素数
+    for &prime in &primes {
+        let mut start = if l % prime == 0 { l } else { l + (prime - l % prime) };
+
+        if start == prime && start >= l {
+            start += prime; // 避免将 prime 本身标记为非素数
+        }
+
+        for j in (start..=r).step_by(prime as usize) {
+            segment[(j - l) as usize] = false;
+        }
+    }
+
+    // Step 4: 收集区间内的素数
+    (l..=r).filter(|&x| segment[(x - l) as usize] && x > 1).count()
+}
 fn solve() {
-    let (n, m, v) = cin!(usize, usize, i64);
-    let qwq = cin!([i64; n]);
-    let mut qaq = vec![0; n + 1];
-    for i in 0..n {
-        qaq[i + 1] = qaq[i] + qwq[i];
-    }
-    // 定义区间和查询函数
-    let querry = |l: usize, r: usize| qaq[r] - qaq[l];
-    // 构建 f 数组，从左往右找到每个满足条件的子区间右端点
-    let mut f = vec![0i64; m + 1];
-    let mut j = 0;
-    for i in 1..=m {
-        while j as usize <= n && querry(f[i - 1] as usize, j as usize) < v {
-            j += 1;
-        }
-        f[i] = j;
-    }
-    // 构建 g 数组，从右往左找到每个满足条件的子区间左端点
-    let mut g = vec![n as i64; m + 1];
-    let mut j = n as i64;
-    for i in 1..=m {
-        while j >= 0 && querry(j as usize, g[i - 1] as usize) < v {
-            j -= 1;
-        }
-        g[i] = j;
-    }
-    println!("{:?} {:?}", f, g);
-    // 查找满足条件的最大区间和
-    let mut ans = -1;
-    for i in 0..=m {
-        if f[i] <= n as i64 && g[m - i] >= 0 && f[i] <= g[m - i] {
-            ans = ans.max(querry(f[i] as usize, g[m - i] as usize));
-        }
-    }
-    // 输出结果
-    println!("{}", ans);
+    let n = cin!(i64);
+    println!("{}", seg(n * n, n * n + n));
 }

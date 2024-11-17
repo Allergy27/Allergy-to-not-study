@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/cf_986_div2_c.rs
-//@data      2024/11/11 00:41:28
+//@workspace PrecticeContest/p1464.rs
+//@data      2024/11/16 02:49:47
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,45 +52,37 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
+    let t = 1;
+    //let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (n, m, v) = cin!(usize, usize, i64);
-    let qwq = cin!([i64; n]);
-    let mut qaq = vec![0; n + 1];
-    for i in 0..n {
-        qaq[i + 1] = qaq[i] + qwq[i];
-    }
-    // 定义区间和查询函数
-    let querry = |l: usize, r: usize| qaq[r] - qaq[l];
-    // 构建 f 数组，从左往右找到每个满足条件的子区间右端点
-    let mut f = vec![0i64; m + 1];
-    let mut j = 0;
-    for i in 1..=m {
-        while j as usize <= n && querry(f[i - 1] as usize, j as usize) < v {
-            j += 1;
+    let mut qwq = vec![vec![vec![0; 27]; 27]; 27];
+    loop {
+        let (a, b, c) = cin!(i64, i64, i64);
+        if (a, b, c) == (-1, -1, -1) {
+            break;
         }
-        f[i] = j;
+        println!("w({a}, {b}, {c}) = {}", w(&mut qwq, a, b, c))
     }
-    // 构建 g 数组，从右往左找到每个满足条件的子区间左端点
-    let mut g = vec![n as i64; m + 1];
-    let mut j = n as i64;
-    for i in 1..=m {
-        while j >= 0 && querry(j as usize, g[i - 1] as usize) < v {
-            j -= 1;
+}
+fn w(qwq: &mut Vec<Vec<Vec<i64>>>, a: i64, b: i64, c: i64) -> i64 {
+    if a <= 0 || b <= 0 || c <= 0 {
+        1
+    } else if a > 20 || b > 20 || c > 20 {
+        w(qwq, 20, 20, 20)
+    } else if a < b && b < c {
+        if qwq[a as usize][b as usize][c as usize] == 0 {
+            qwq[a as usize][b as usize][c as usize] =
+                w(qwq, a, b, c - 1) + w(qwq, a, b - 1, c - 1) - w(qwq, a, b - 1, c);
         }
-        g[i] = j;
-    }
-    println!("{:?} {:?}", f, g);
-    // 查找满足条件的最大区间和
-    let mut ans = -1;
-    for i in 0..=m {
-        if f[i] <= n as i64 && g[m - i] >= 0 && f[i] <= g[m - i] {
-            ans = ans.max(querry(f[i] as usize, g[m - i] as usize));
+        qwq[a as usize][b as usize][c as usize]
+    } else {
+        if qwq[a as usize][b as usize][c as usize] == 0 {
+            qwq[a as usize][b as usize][c as usize] =
+                w(qwq, a - 1, b, c) + w(qwq, a - 1, b - 1, c) + w(qwq, a - 1, b, c - 1)
+                    - w(qwq, a - 1, b - 1, c - 1);
         }
+        qwq[a as usize][b as usize][c as usize]
     }
-    // 输出结果
-    println!("{}", ans);
 }

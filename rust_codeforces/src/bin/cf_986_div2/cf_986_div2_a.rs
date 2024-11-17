@@ -81,14 +81,9 @@ fn solve() {
             }
             if tmp == (a, b) {
                 println!("YES");
-                break;
+                return;
             }
         }
-        if tmp == (a, b) {
-            break;
-        }
     }
-    if tmp != (a, b) {
-        println!("NO");
-    }
+    println!("NO");
 }

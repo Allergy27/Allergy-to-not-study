@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/cf_986_div2_c.rs
-//@data      2024/11/11 00:41:28
+//@workspace PrecticeContest/camp_day_2_K.rs
+//@data      2024/11/17 12:19:26
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,45 +52,53 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
+    let t = 1;
+    //let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
+
+const MOD: u64 = 998244353;
+
+// Fast exponentiation for modular arithmetic
+fn mod_exp(base: u64, exp: u64, modulo: u64) -> u64 {
+    let mut result = 1;
+    let mut b = base % modulo;
+    let mut e = exp;
+    while e > 0 {
+        if e % 2 == 1 {
+            result = result * b % modulo;
+        }
+        b = b * b % modulo;
+        e /= 2;
+    }
+    result
+}
+
 fn solve() {
-    let (n, m, v) = cin!(usize, usize, i64);
-    let qwq = cin!([i64; n]);
-    let mut qaq = vec![0; n + 1];
-    for i in 0..n {
-        qaq[i + 1] = qaq[i] + qwq[i];
-    }
-    // 定义区间和查询函数
-    let querry = |l: usize, r: usize| qaq[r] - qaq[l];
-    // 构建 f 数组，从左往右找到每个满足条件的子区间右端点
-    let mut f = vec![0i64; m + 1];
-    let mut j = 0;
-    for i in 1..=m {
-        while j as usize <= n && querry(f[i - 1] as usize, j as usize) < v {
-            j += 1;
+    // Input reading
+    let (n, k) = cin!(usize, usize);
+    let a = cin!([u64; n]);
+    // dp[xor_value] = count of subsequences with this XOR value
+    let mut dp = std::collections::HashMap::new();
+    dp.insert(0, 1); // Base case: empty subsequence with XOR = 0
+
+    for &num in &a {
+        let mut new_dp = dp.clone();
+        for (&xor_value, &count) in &dp {
+            let new_xor = xor_value ^ num;
+            *new_dp.entry(new_xor).or_insert(0) += count;
+            *new_dp.entry(new_xor).or_insert(0) %= MOD;
         }
-        f[i] = j;
+        dp = new_dp;
     }
-    // 构建 g 数组，从右往左找到每个满足条件的子区间左端点
-    let mut g = vec![n as i64; m + 1];
-    let mut j = n as i64;
-    for i in 1..=m {
-        while j >= 0 && querry(j as usize, g[i - 1] as usize) < v {
-            j -= 1;
-        }
-        g[i] = j;
-    }
-    println!("{:?} {:?}", f, g);
-    // 查找满足条件的最大区间和
-    let mut ans = -1;
-    for i in 0..=m {
-        if f[i] <= n as i64 && g[m - i] >= 0 && f[i] <= g[m - i] {
-            ans = ans.max(querry(f[i] as usize, g[m - i] as usize));
+    // Count subsequences where XOR = 0 and length is divisible by k
+    let mut result = 0;
+    for l in (k..=n).step_by(k) {
+        let comb = mod_exp(2, n as u64 - l as u64, MOD); // Choose subsequences
+        if let Some(&count) = dp.get(&0) {
+            result = (result + count * comb) % MOD;
         }
     }
-    // 输出结果
-    println!("{}", ans);
+
+    println!("{}", result);
 }

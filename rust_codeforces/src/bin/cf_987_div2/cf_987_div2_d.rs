@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/cf_986_div2_c.rs
-//@data      2024/11/11 00:41:28
+//@workspace PrecticeContest/cf_987_div2_d.rs
+//@data      2024/11/15 23:20:58
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -57,40 +57,29 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (n, m, v) = cin!(usize, usize, i64);
-    let qwq = cin!([i64; n]);
-    let mut qaq = vec![0; n + 1];
+    let n = cin!(usize);
+    let qwq = cin!([i32; n]);
+    let mut pre = vec![-1; n + 1];
     for i in 0..n {
-        qaq[i + 1] = qaq[i] + qwq[i];
+        pre[i + 1] = pre[i].max(qwq[i])
     }
-    // 定义区间和查询函数
-    let querry = |l: usize, r: usize| qaq[r] - qaq[l];
-    // 构建 f 数组，从左往右找到每个满足条件的子区间右端点
-    let mut f = vec![0i64; m + 1];
-    let mut j = 0;
-    for i in 1..=m {
-        while j as usize <= n && querry(f[i - 1] as usize, j as usize) < v {
-            j += 1;
-        }
-        f[i] = j;
+    let mut suf = vec![n as i32 + 1; n + 1];
+    for i in (0..n).rev() {
+        suf[i] = suf[i + 1].min(qwq[i])
     }
-    // 构建 g 数组，从右往左找到每个满足条件的子区间左端点
-    let mut g = vec![n as i64; m + 1];
-    let mut j = n as i64;
-    for i in 1..=m {
-        while j >= 0 && querry(j as usize, g[i - 1] as usize) < v {
-            j -= 1;
-        }
-        g[i] = j;
-    }
-    println!("{:?} {:?}", f, g);
-    // 查找满足条件的最大区间和
-    let mut ans = -1;
-    for i in 0..=m {
-        if f[i] <= n as i64 && g[m - i] >= 0 && f[i] <= g[m - i] {
-            ans = ans.max(querry(f[i] as usize, g[m - i] as usize));
+    let mut ans = vec![-1; n];
+    let mut last = 0;
+    // println!("!!!!!!!!check!!!!!!!!");
+    for i in 1..=n {
+        // println!("{last} {i} {:?} {:?} {:?}", ans, pre[i], suf[i]);
+        //往右找不到更小值，说明当前值最小
+        if pre[i] <= suf[i] {
+            for elem in ans.iter_mut().take(i).skip(last) {
+                *elem = pre[i];
+            }
+            last = i;
         }
     }
-    // 输出结果
-    println!("{}", ans);
+    ans.iter().for_each(|x| print!("{x} "));
+    println!()
 }

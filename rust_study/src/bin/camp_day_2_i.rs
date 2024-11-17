@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/cf_986_div2_c.rs
-//@data      2024/11/11 00:41:28
+//@workspace PrecticeContest/camp_day_2_I.rs
+//@data      2024/11/17 12:15:36
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -52,45 +52,32 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    // let t = 1;
-    let t = cin!(i64);
+    let t = 1;
+    //let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (n, m, v) = cin!(usize, usize, i64);
-    let qwq = cin!([i64; n]);
-    let mut qaq = vec![0; n + 1];
-    for i in 0..n {
-        qaq[i + 1] = qaq[i] + qwq[i];
-    }
-    // 定义区间和查询函数
-    let querry = |l: usize, r: usize| qaq[r] - qaq[l];
-    // 构建 f 数组，从左往右找到每个满足条件的子区间右端点
-    let mut f = vec![0i64; m + 1];
-    let mut j = 0;
-    for i in 1..=m {
-        while j as usize <= n && querry(f[i - 1] as usize, j as usize) < v {
-            j += 1;
+    const MOD: u32 = 998244353;
+    let n = cin!(usize);
+    let a = cin!([u32; n]);
+
+    let max_xor = 1 << 17; // Maximum possible XOR value (100000 in binary has ~17 bits)
+    let mut dp = vec![0u32; max_xor as usize];
+    dp[0] = 1; // Base case: one way to form XOR 0 (empty set)
+
+    for &val in &a {
+        let mut new_dp = dp.clone();
+        for x in 0..max_xor {
+            new_dp[(x ^ val) as usize] = (new_dp[(x ^ val) as usize] + dp[x as usize]) % MOD;
         }
-        f[i] = j;
+        dp = new_dp;
     }
-    // 构建 g 数组，从右往左找到每个满足条件的子区间左端点
-    let mut g = vec![n as i64; m + 1];
-    let mut j = n as i64;
-    for i in 1..=m {
-        while j >= 0 && querry(j as usize, g[i - 1] as usize) < v {
-            j -= 1;
-        }
-        g[i] = j;
+
+    // Compute the number of valid ways
+    let mut result = 0u32;
+    for &count in &dp {
+        result = (result + (count as u64 * count as u64 % MOD as u64) as u32) % MOD;
     }
-    println!("{:?} {:?}", f, g);
-    // 查找满足条件的最大区间和
-    let mut ans = -1;
-    for i in 0..=m {
-        if f[i] <= n as i64 && g[m - i] >= 0 && f[i] <= g[m - i] {
-            ans = ans.max(querry(f[i] as usize, g[m - i] as usize));
-        }
-    }
-    // 输出结果
-    println!("{}", ans);
+
+    println!("{}", result);
 }

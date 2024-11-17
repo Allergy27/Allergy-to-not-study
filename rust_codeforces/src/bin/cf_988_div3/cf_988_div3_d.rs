@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace Prectice_Contest/cf_986_div2_c.rs
-//@data      2024/11/11 00:41:28
+//@workspace PrecticeContest/cf_988_div3_d.rs
+//@data      2024/11/17 22:59:31
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -57,40 +57,44 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    let (n, m, v) = cin!(usize, usize, i64);
-    let qwq = cin!([i64; n]);
-    let mut qaq = vec![0; n + 1];
-    for i in 0..n {
-        qaq[i + 1] = qaq[i] + qwq[i];
+    let (l, m, n) = cin!(usize, usize, usize);
+    let mut qwq = Vec::with_capacity(l);
+    for _ in 0..l {
+        qwq.push(cin!(usize, usize));
     }
-    // 定义区间和查询函数
-    let querry = |l: usize, r: usize| qaq[r] - qaq[l];
-    // 构建 f 数组，从左往右找到每个满足条件的子区间右端点
-    let mut f = vec![0i64; m + 1];
-    let mut j = 0;
-    for i in 1..=m {
-        while j as usize <= n && querry(f[i - 1] as usize, j as usize) < v {
-            j += 1;
+    let mut qaq = Vec::with_capacity(m);
+    for _ in 0..m {
+        qaq.push(cin!(usize, usize));
+    }
+
+    // 合并事件: 增益 障碍 结束 终点
+    let mut events = Vec::new();
+    for &(l, r) in &qwq {
+        events.push((l, 1, r - l + 1));
+    }
+    for &(x, v) in &qaq {
+        events.push((x, 0, v));
+    }
+    events.push((n, 2, 0)); // 终点
+    events.sort_unstable_by(|a, b| a.0.cmp(&b.0));
+    let mut k = 1;
+    let mut heap = std::collections::BinaryHeap::new();
+    let mut ans = 0;
+    for (_, t, v) in events {
+        if t == 0 {
+            heap.push(v);
+        } else if t == 1 {
+            while k <= v {
+                if let Some(top) = heap.pop() {
+                    k += top;
+                    ans += 1;
+                } else {
+                    println!("-1");
+                    return;
+                }
+            }
+        } else {
+            println!("{ans}");
         }
-        f[i] = j;
     }
-    // 构建 g 数组，从右往左找到每个满足条件的子区间左端点
-    let mut g = vec![n as i64; m + 1];
-    let mut j = n as i64;
-    for i in 1..=m {
-        while j >= 0 && querry(j as usize, g[i - 1] as usize) < v {
-            j -= 1;
-        }
-        g[i] = j;
-    }
-    println!("{:?} {:?}", f, g);
-    // 查找满足条件的最大区间和
-    let mut ans = -1;
-    for i in 0..=m {
-        if f[i] <= n as i64 && g[m - i] >= 0 && f[i] <= g[m - i] {
-            ans = ans.max(querry(f[i] as usize, g[m - i] as usize));
-        }
-    }
-    // 输出结果
-    println!("{}", ans);
 }

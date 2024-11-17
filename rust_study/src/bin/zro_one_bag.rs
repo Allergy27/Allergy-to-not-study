@@ -57,7 +57,9 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
+    println!("请输入物品数量和背包容量:");
     let (n, m) = cin!(usize, usize);
+    println!("请依次在每行输入物品的重量和价值:");
     let qwq = (0..n).map(|_| cin!(usize, usize)).collect::<Vec<_>>();
 
     //01背包问题 --回溯法O(2^n)暴力解
@@ -86,6 +88,7 @@ fn solve() {
         let mut qaq = qwq.clone();
         qaq.sort_unstable_by(|a, b| (b.1 * a.0).cmp(&(a.1 * b.0)));
         let mut st = std::collections::BinaryHeap::new();
+        //界限函数
         let ub = |w: usize, v: usize, i: usize| v + (m - w) * (qaq[i].1 / qaq[i].0);
         st.push((ub(0, 0, 0), 0, 0, 0));
         let mut tc = 0;
@@ -116,9 +119,9 @@ fn solve() {
         }
     }
 
-    let (zro_1, t1) = dp_back();
-    let (zro_2, t2) = dp_binary();
+    let (_zro_1, t1) = dp_back();
+    let (_zro_2, t2) = dp_binary();
     let mn = (n as f64).log2();
     println!("t1:{t1}\nt2:{:.2}\nt3:{t3}", t2 as f64 * mn);
-    println!("{} {} {}", zro_1, zro_2, dp[m]);
+    println!("{}", dp[m]);
 }
