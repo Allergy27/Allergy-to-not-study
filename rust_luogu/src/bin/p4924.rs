@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace PrecticeContest/cf_988_div3_g.rs
-//@data      2024/11/17 23:41:14
+//@workspace PrecticeContest/p4924.rs
+//@data      2024/11/18 12:06:36
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -56,62 +56,44 @@ fn main() {
     //let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
-use std::collections::{HashMap, HashSet};
-
 fn solve() {
-    let n = cin!(usize);
-    let a = cin!([usize; n]);
-    const MOD: i64 = 998244353;
-    let max_val = *a.iter().max().unwrap();
-
-    // Step 1: 莫比乌斯函数预处理
-    let mut mu = vec![1; max_val + 1];
-    let mut is_prime = vec![true; max_val + 1];
-    for i in 2..=max_val {
-        if is_prime[i] {
-            for j in (i..=max_val).step_by(i) {
-                is_prime[j] = false;
-                mu[j] *= -1;
-            }
-            for j in (i * i..=max_val).step_by(i * i) {
-                mu[j] = 0; // 非平方自由数
-            }
-        }
-    }
-
-    // Step 2: 初始化路径计数器 count
-    let mut count = vec![0; max_val + 1];
-    let mut dp = vec![0; n];
-    dp[0] = 1; // 初始条件：到达第一个城市的路径数为 1
-
-    // Step 3: 计算 dp[i] 并更新 count 数组
-    for i in 0..n {
-        let val = a[i];
-        let mut dp_i = 0;
-
-        // 利用莫比乌斯函数计算 dp[i]
-        for d in 1..=(val as f64).sqrt() as usize {
-            if val % d == 0 {
-                dp_i = (dp_i + mu[d] * count[d]) % MOD;
-                if d != val / d {
-                    dp_i = (dp_i + mu[val / d] * count[val / d]) % MOD;
+    let (n, m) = cin!(usize, usize);
+    let mut qwq = (1..=(n * n)).fold(vec![Vec::with_capacity(n); n], |mut ans, x| {
+        ans[(x - 1) / n].push(x);
+        ans
+    });
+    let mut tmp = vec![vec![0; n]; n];
+    for _ in 0..m {
+        let (x, y, r, z) = cin!(usize, usize, usize, usize);
+        let (x, y) = (x - 1, y - 1);
+        if z == 0 {
+            for (i, row) in qwq.iter().enumerate().skip(x - r).take(2 * r + 1) {
+                for (j, &val) in row.iter().enumerate().skip(y - r).take(2 * r + 1) {
+                    tmp[x - y + j][x + y - i] = val;
                 }
             }
-        }
-        dp_i = (dp_i + MOD) % MOD; // 防止负数出现
-        dp[i] = dp_i;
-
-        // 更新 count 数组
-        for d in 1..=(val as f64).sqrt() as usize {
-            if val % d == 0 {
-                count[d] = (count[d] + dp[i]) % MOD;
-                if d != val / d {
-                    count[val / d] = (count[val / d] + dp[i]) % MOD;
+            for (i, row) in tmp.iter().enumerate().skip(x - r).take(2 * r + 1) {
+                for (j, &val) in row.iter().enumerate().skip(y - r).take(2 * r + 1) {
+                    qwq[i][j] = val;
+                }
+            }
+        } else {
+            for (i, row) in qwq.iter().enumerate().skip(x - r).take(2 * r + 1) {
+                for (j, &val) in row.iter().enumerate().skip(y - r).take(2 * r + 1) {
+                    tmp[x + y - j][y - x + i] = val;
+                }
+            }
+            for (i, row) in tmp.iter().enumerate().skip(x - r).take(2 * r + 1) {
+                for (j, &val) in row.iter().enumerate().skip(y - r).take(2 * r + 1) {
+                    qwq[i][j] = val;
                 }
             }
         }
     }
-
-    println!("{:?}", dp);
-    println!("{}", dp[n - 1]);
+    for row in qwq.iter() {
+        for &val in row.iter() {
+            print!("{} ", val);
+        }
+        println!();
+    }
 }

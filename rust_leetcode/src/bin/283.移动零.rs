@@ -4,6 +4,10 @@
  * [283] 移动零
  */
 
+
+// @lcpr-template-start
+
+// @lcpr-template-end
 // @lc code=start
 impl Solution {
     pub fn move_zeroes(nums: &mut Vec<i32>) {

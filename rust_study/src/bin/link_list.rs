@@ -36,6 +36,7 @@ impl<T: std::fmt::Display> ListNode<T> {
         }
     }
 }
+
 fn main() {
     let t = 1;
     //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let t:i32=input.parse().unwrap();

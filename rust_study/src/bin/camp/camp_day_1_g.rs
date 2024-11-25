@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace PrecticeContest/cf_988_div3_g.rs
-//@data      2024/11/17 23:41:14
+//@workspace PrecticeContest/camp_day_1_g.rs
+//@data      2024/11/16 12:27:53
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -56,62 +56,35 @@ fn main() {
     //let t = cin!(i64);
     (0..t).for_each(|_| solve());
 }
-use std::collections::{HashMap, HashSet};
 
 fn solve() {
     let n = cin!(usize);
-    let a = cin!([usize; n]);
-    const MOD: i64 = 998244353;
-    let max_val = *a.iter().max().unwrap();
-
-    // Step 1: 莫比乌斯函数预处理
-    let mut mu = vec![1; max_val + 1];
-    let mut is_prime = vec![true; max_val + 1];
-    for i in 2..=max_val {
+    // Step 1: Compute Möbius function (μ) using sieve
+    let mut mu = vec![1; n + 1];
+    let mut is_prime = vec![true; n + 1];
+    for i in 2..=n {
         if is_prime[i] {
-            for j in (i..=max_val).step_by(i) {
+            for j in (i..=n).step_by(i) {
                 is_prime[j] = false;
                 mu[j] *= -1;
             }
-            for j in (i * i..=max_val).step_by(i * i) {
-                mu[j] = 0; // 非平方自由数
-            }
-        }
-    }
-
-    // Step 2: 初始化路径计数器 count
-    let mut count = vec![0; max_val + 1];
-    let mut dp = vec![0; n];
-    dp[0] = 1; // 初始条件：到达第一个城市的路径数为 1
-
-    // Step 3: 计算 dp[i] 并更新 count 数组
-    for i in 0..n {
-        let val = a[i];
-        let mut dp_i = 0;
-
-        // 利用莫比乌斯函数计算 dp[i]
-        for d in 1..=(val as f64).sqrt() as usize {
-            if val % d == 0 {
-                dp_i = (dp_i + mu[d] * count[d]) % MOD;
-                if d != val / d {
-                    dp_i = (dp_i + mu[val / d] * count[val / d]) % MOD;
-                }
-            }
-        }
-        dp_i = (dp_i + MOD) % MOD; // 防止负数出现
-        dp[i] = dp_i;
-
-        // 更新 count 数组
-        for d in 1..=(val as f64).sqrt() as usize {
-            if val % d == 0 {
-                count[d] = (count[d] + dp[i]) % MOD;
-                if d != val / d {
-                    count[val / d] = (count[val / d] + dp[i]) % MOD;
+            let ii = i * i;
+            if ii <= n {
+                for j in (ii..=n).step_by(ii) {
+                    mu[j] = 0;
                 }
             }
         }
     }
-
-    println!("{:?}", dp);
-    println!("{}", dp[n - 1]);
+    // Step 2: Compute G
+    let mut g = 0;
+    for d in 1..=n {
+        let mut term = 0;
+        for (i, elem) in mu.iter().enumerate().take(n / d + 1).skip(1) {
+            let tmp = (n / (d * i)) as i64;
+            term += elem * tmp * tmp;
+        }
+        g += d as i64 * term;
+    }
+    println!("{g}")
 }
