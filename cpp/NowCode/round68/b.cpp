@@ -17,29 +17,19 @@ ll ll_inf = 0x3f3f3f3f3f3f3f3f;
 void solve() {
     int n, m;
     cin >> n >> m;
-    vector<string> qwq(n);
-    for (auto &x : qwq) cin >> x;
-    set<int> col;
-    set<int> row;
+    vector<string> tmp(n);
+    for (auto &x : tmp) cin >> x;
     vector<vector<int>> qaq(n, vector<int>(m));
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
         for (int j = 0; j < m; ++j)
-            if (qwq[i][j] == '*') {
-                col.insert(j);
-                row.insert(i);
-                qaq[i][j] = 1;
-            }
-    }
+            if (tmp[i][j] == '*') qaq[i][j] = 1;
     // 计算二维前缀和
-    vector<vector<int>> qwwwq(n + 1, vector<int>(m + 1, 0));
-    for (int i = 1; i <= n; ++i) {
-        for (int j = 1; j <= m; ++j) {
-            qwwwq[i][j] = qaq[i - 1][j - 1] + qwwwq[i - 1][j] + qwwwq[i][j - 1] - qwwwq[i - 1][j - 1];
-        }
-    }
+    vector<vector<int>> qwq(n + 1, vector<int>(m + 1, 0));
+    for (int i = 1; i <= n; ++i)
+        for (int j = 1; j <= m; ++j)
+            qwq[i][j] = qaq[i - 1][j - 1] + qwq[i - 1][j] + qwq[i][j - 1] - qwq[i - 1][j - 1];
     auto cot = [&](int x1, int y1, int x2, int y2) {
-        cin >> x1 >> y1 >> x2 >> y2;
-        return qwwwq[x2 + 1][y2 + 1] - qwwwq[x1][y2 + 1] - qwwwq[x2 + 1][y1] + qwwwq[x1][y1];
+        return qwq[x2 + 1][y2 + 1] - qwq[x1][y2 + 1] - qwq[x2 + 1][y1] + qwq[x1][y1];
     };
 
     int ans = 0;

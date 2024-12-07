@@ -15,12 +15,12 @@ int inf = 0x3f3f3f3f;
 ll ll_inf = 0x3f3f3f3f3f3f3f3f;
 
 void solve() {
-    int n, m;
-    cin >> n >> m;
+    int n, h;
+    cin >> n >> h;
     for (int i = 0; i < n; i++) {
         int a, b, c;
         cin >> a >> b >> c;
-        c = m * 2 - c;
+        c = h * 2 - c;
         int g = __gcd(__gcd(a, b), c);
         a /= g;
         b /= g;
