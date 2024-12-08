@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace PrecticeContest/a.rs
-//@data      2024/12/08 16:14:38
+//@workspace PrecticeContest/cf_992_div2_d.rs
+//@data      2024/12/08 23:59:51
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -61,10 +61,46 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    let t = 1;
-    //let t = cin!(i64);
-    (0..t).for_each(|_|solve());
+    // let t = 1;
+    let t = cin!(i64);
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
+    let n = cin!(usize);
+    let mut qwq = vec![Vec::new(); n + 1];
+    for _ in 0..n - 1 {
+        let (u, v) = cin!(usize, usize);
+        qwq[u].push(v);
+        qwq[v].push(u);
+    }
+    let mut ans = vec![0; n + 1];
+    let mut que = std::collections::VecDeque::new();
+    let mut vis = vec![false; n + 1];
+    let mut odd = 1;
+    let mut even = 2;
 
+    que.push_back((1, 0)); // (node, depth)
+    vis[1] = true;
+
+    while let Some((x, t)) = que.pop_front() {
+        if t % 2 == 0 {
+            ans[x] = even;
+            even += 2;
+        } else {
+            ans[x] = odd;
+            odd += 2;
+        }
+
+        for &y in &qwq[x] {
+            if !vis[y] {
+                vis[y] = true;
+                que.push_back((y, t + 1));
+            }
+        }
+    }
+
+    (1..=n).for_each(|i| {
+        print!("{} ", ans[i]);
+    });
+    println!();
 }

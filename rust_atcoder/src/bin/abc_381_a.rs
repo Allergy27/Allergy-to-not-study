@@ -59,11 +59,11 @@ fn main() {
 fn solve() {
     let n = cin!(usize);
     let mut s = String::new();
-    for i in 1..(n + 1) / 2 {
+    for _ in 1..(n + 1) / 2 {
         s.push('1');
     }
     s.push('/');
-    for i in (n + 1) / 2..n {
+    for _ in (n + 1) / 2..n {
         s.push('2');
     }
     let ck = cin!();

@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace PrecticeContest/a.rs
-//@data      2024/12/08 16:14:38
+//@workspace PrecticeContest/abc_383_a.rs
+//@data      2024/12/07 19:59:52
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -63,8 +63,22 @@ macro_rules! cin {
 fn main() {
     let t = 1;
     //let t = cin!(i64);
-    (0..t).for_each(|_|solve());
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
-
+    let n = cin!(usize);
+    let mut ans = 0;
+    let mut t = 1;
+    for _ in 0..n {
+        let (a, b) = cin!(i64, i64);
+        let tmp = a - t;
+        if tmp > ans {
+            ans = 0;
+        } else {
+            ans -= tmp;
+        }
+        t = a;
+        ans += b;
+    }
+    println!("{ans}")
 }

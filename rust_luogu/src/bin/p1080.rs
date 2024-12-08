@@ -68,11 +68,11 @@ fn solve() {
     ans.sort_by(|x, y| (x[0] * x[1]).cmp(&(y[0] * y[1])));
 
     let mut s = vec![0];
-    for i in 0..n {
+    (0..n).for_each(|i| {
         let div = divide(&a, ans[i][1]);
         s = max_vec(&s, &div);
         a = multiply(&a, ans[i][0]);
-    }
+    });
 
     println!("{}", vec_to_string(&s));
 }

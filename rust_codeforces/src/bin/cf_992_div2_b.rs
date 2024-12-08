@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace PrecticeContest/a.rs
-//@data      2024/12/08 16:14:38
+//@workspace PrecticeContest/cf_992_div2_b.rs
+//@data      2024/12/08 22:45:47
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -61,10 +61,16 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    let t = 1;
-    //let t = cin!(i64);
-    (0..t).for_each(|_|solve());
-}
-fn solve() {
-
+    // let t = 1;
+    let t = cin!(i64);
+    let mut qwq = vec![1];
+    let mut tmp = 1;
+    while tmp < 1_000_000 {
+        tmp = (tmp + 1) << 1;
+        qwq.push(tmp);
+    }
+    for _ in 0..t {
+        let n = cin!(usize);
+        println!("{}", qwq.partition_point(|x| *x < n) + 1);
+    }
 }

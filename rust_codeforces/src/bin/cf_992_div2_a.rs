@@ -1,7 +1,7 @@
 //@author    Allergy
 //@email     Allergy527@gmail.com
-//@workspace PrecticeContest/a.rs
-//@data      2024/12/08 16:14:38
+//@workspace PrecticeContest/cf_992_div2_a.rs
+//@data      2024/12/08 22:35:35
 #[macro_export]
 macro_rules! cin {
     ()=>{{
@@ -61,10 +61,25 @@ macro_rules! cin {
     }}
 }
 fn main() {
-    let t = 1;
-    //let t = cin!(i64);
-    (0..t).for_each(|_|solve());
+    // let t = 1;
+    let t = cin!(i64);
+    (0..t).for_each(|_| solve());
 }
 fn solve() {
-
+    let (n, m) = cin!(usize, usize);
+    let mut qwq = cin!([usize; n]);
+    for i in 0..n {
+        let mut flag = false;
+        for j in 0..n {
+            if j != i && qwq[j].abs_diff(qwq[i]) % m == 0 {
+                flag = true;
+                break;
+            }
+        }
+        if !flag {
+            println!("Yes\n{}", i + 1);
+            return;
+        }
+    }
+    println!("No");
 }
