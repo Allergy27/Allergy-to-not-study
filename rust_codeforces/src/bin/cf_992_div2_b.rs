@@ -60,7 +60,8 @@ macro_rules! cin {
         ($(s.next().unwrap().parse::<$type>().unwrap()),*)
     }}
 }
-fn main() {
+fn main() { solve(); }
+fn solve() {
     // let t = 1;
     let t = cin!(i64);
     let mut qwq = vec![1];

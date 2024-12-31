@@ -16,9 +16,7 @@ ll ll_inf = 0x3f3f3f3f3f3f3f3f;
 void solve() {
     std::string s;
     std::cin >> s;
-    std::set<char> st;
-    for (auto i : s) st.insert(i);
-    std::cout << st.size() << ln;
+    std::cout << std::set<char>(s.begin(), s.end()).size() << ln;
 }
 
 signed main() {

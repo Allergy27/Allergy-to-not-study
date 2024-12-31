@@ -16,6 +16,7 @@ int check() {
     }
     return 1;
 }
+
 void dsf(int u) {
     if (u == n + 1) {
         if (check()) ans = min(ans, cost);
@@ -32,13 +33,12 @@ void dsf(int u) {
     cost -= g[u][1];
     dsf(u + 1);
 }
+
 int main() {
     cin >> n >> m >> x;
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m + 1; j++) {
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m + 1; j++)
             scanf("%d", &g[i][j]);
-        }
-    }
     dsf(1);
     cout << ans << endl;
     getchar();

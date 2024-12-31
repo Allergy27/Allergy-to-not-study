@@ -70,36 +70,29 @@ fn solve() {
     let mut qwq = vec![Vec::new(); n + 1];
     for _ in 0..n - 1 {
         let (u, v) = cin!(usize, usize);
-        qwq[u].push(v);
-        qwq[v].push(u);
+        qwq[u - 1].push(v - 1);
+        qwq[v - 1].push(u - 1);
     }
-    let mut ans = vec![0; n + 1];
-    let mut que = std::collections::VecDeque::new();
-    let mut vis = vec![false; n + 1];
-    let mut odd = 1;
-    let mut even = 2;
-
-    que.push_back((1, 0)); // (node, depth)
-    vis[1] = true;
-
-    while let Some((x, t)) = que.pop_front() {
-        if t % 2 == 0 {
-            ans[x] = even;
-            even += 2;
-        } else {
-            ans[x] = odd;
-            odd += 2;
-        }
-
+    let mut ans = vec![0; n];
+    fn dfs(x: usize, p: usize, cur: &mut i64, qwq: &Vec<Vec<usize>>, ans: &mut Vec<i64>) {
+        ans[x] = *cur;
+        let mut flag = true;
         for &y in &qwq[x] {
-            if !vis[y] {
-                vis[y] = true;
-                que.push_back((y, t + 1));
+            if y != p {
+                if flag {
+                    flag = false;
+                    *cur += 1;
+                    dfs(y, x, cur, qwq, ans);
+                    *cur += 1;
+                } else {
+                    *cur += 2;
+                    dfs(y, x, cur, qwq, ans);
+                }
             }
         }
     }
-
-    (1..=n).for_each(|i| {
+    dfs(0, n, &mut 1, &qwq, &mut ans);
+    (0..n).for_each(|i| {
         print!("{} ", ans[i]);
     });
     println!();

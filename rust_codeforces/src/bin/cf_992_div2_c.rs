@@ -60,60 +60,31 @@ macro_rules! cin {
         ($(s.next().unwrap().parse::<$type>().unwrap()),*)
     }}
 }
-
 fn main() {
-    let t = cin!(usize);
-    let mut pow2 = [0u64; 41];
-    pow2[0] = 1;
-    for i in 1..=40 {
-        pow2[i] = pow2[i - 1] << 1;
+    // let t = 1;
+    let t = cin!(i64);
+    (0..t).for_each(|_| solve());
+}
+fn solve() {
+    let (n, k) = cin!(usize, i64);
+    let mut k = k - 1;
+    if n <= 60 && k >= (1 << (n - 1)) {
+        println!("-1");
+        return;
     }
-    for _ in 0..t {
-        let (n, mut k) = cin!(usize, u64);
-        if n == 1 {
-            if k > 1 {
-                println!("-1")
-            } else {
-                println!("1")
-            }
-            continue;
-        }
-        let mx_cot = if n - 1 <= 40 { pow2[n - 1] } else { u64::MAX };
-        if k > mx_cot {
-            println!("-1");
-            continue;
-        }
-        let mut op = vec![false; n + 1];
-        for i in (2..=n).rev() {
-            let half = if i - 2 <= 40 { pow2[i - 2] } else { u64::MAX };
-            if k <= half {
-                op[i] = true;
-            } else {
-                op[i] = false;
-                k -= half;
-            }
-        }
-        let mut dq = std::collections::VecDeque::new();
-        dq.push_back(1);
-        for i in 2..=n {
-            if op[i] {
-                dq.push_front(i);
-            } else {
-                dq.push_back(i);
-            }
-        }
-        // println!("{:?}", dq);
-        let mut ans = Vec::with_capacity(n);
-        for &x in &dq {
-            let val = n as u64 - x as u64 + 1;
-            ans.push(val);
-        }
-        for (i, &val) in ans.iter().enumerate() {
-            if i == n - 1 {
-                println!("{}", val);
-            } else {
-                print!("{} ", val);
-            }
+    let mut p = vec![0; n];
+    let (mut l, mut r) = (0, n - 1);
+    for i in 1..n {
+        if n - 1 - i > 60 || k < (1 << (n - 1 - i)) {
+            p[l] = i;
+            l += 1;
+        } else {
+            p[r] = i;
+            r -= 1;
+            k -= 1 << (n - 1 - i);
         }
     }
+    p[l] = n;
+    (0..n).for_each(|i| print!("{} ", p[i]));
+    println!();
 }

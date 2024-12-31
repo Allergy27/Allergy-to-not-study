@@ -34,9 +34,9 @@ void dfs(int i, int s, double val) {
     else
         return;
     for (int j = 1; j <= n; j++) {
-        if ((s & (1<<(j-1))) == 0){
+        if ((s & (1 << (j - 1))) == 0) {
             // cout<<val<<' '<<s<<endl;
-            dfs(j, s |1<< (j-1), val + cal_d(i, j));
+            dfs(j, s | 1 << (j - 1), val + cal_d(i, j));
         }
     }
 }
@@ -51,9 +51,9 @@ signed main() {
         cin >> x[i] >> y[i];
     // cout<<cal_d(1,2);
     dfs(0, 0, 0);
-    double ans=1e10;
-    for(int i=1;i<=n;i++)
-    ans=min(dp[(1<<n)-1][i],ans);
+    double ans = 1e10;
+    for (int i = 1; i <= n; i++)
+        ans = min(dp[(1 << n) - 1][i], ans);
     // cout <<ans;
     printf("%.2f", ans);
     return 0;

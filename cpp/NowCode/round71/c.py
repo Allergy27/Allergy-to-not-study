@@ -1,9 +1,5 @@
 def solve():
-    n, k = map(int, input().split())
-    if k > n - 1:
-        print("No")
-    else:
-        print("Yes")
+    print(len(set(input().strip())))
 
 
 if __name__ == "__main__":

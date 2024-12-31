@@ -13,18 +13,26 @@ using ll = int;
 int inf = 0x3f3f3f3f;
 ll ll_inf = 0x3f3f3f3f3f3f3f3f;
 void solve() {
-    int n;
+    int n, m;
     std::cin >> n;
-    std::string colors;
-    std::cin >> colors;
-    std::vector<int> t(n);
-    for (int i = 0; i < n; ++i) {
-        std::cin >> t[i];
-    }
-    std::vector<std::vector<int>> dp(6, std::vector<int>(n, inf));
-    for (int i = 0; i < 6; ++i)
-        dp[i][0] = 0;
+    std::string s;
+    std::cin >> s;
+    std::vector<int> qwq(n);
+    for (auto &x : qwq) std::cin >> x;
+    int ans = ll_inf;
+    std::vector<int> order{0, 1, 2};
+    do {
+        std::vector dp(n + 1, std::vector<int>(3, ll_inf));
+        dp[0] = {0, 0, 0};
+        for (int k = 0; k < n; ++k)
+            for (int i = 0; i < 3; ++i)
+                for (int j = 0; j <= i; ++j)
+                    dp[k + 1][order[i]] = std::min(dp[k + 1][order[i]],
+                                                   dp[k][order[j]] + (s[k] - '0' != order[i]) * qwq[k]);
+        ans = std::min(ans, *std::min_element(dp[n].begin(), dp[n].end()));
+    } while (std::next_permutation(order.begin(), order.end()));
 
+    std::cout << ans << ln;
 }
 signed main() {
     std::ios::sync_with_stdio(false), std::cin.tie(nullptr);

@@ -2,63 +2,53 @@
 /* @author    Allergy
  * @email     Allergy527@gmail.com
  * @workspace cpp\NowCode\round71\e.cpp
- * @date      2024/12/08 20:29:17
+ * @date      2024/12/09 09:28:54
  */
-#include <bits/stdc++.h>
+#include <cmath>
+#include <cstdint>
+#include <iomanip>
+#include <iostream>
+#include <map>
+#include <vector>
+#define lowbit(x) ((x) & (-(x)))
 #define ln '\n'
 #define int int64_t
-
-using namespace std;
-
+#define double long double
+using ll = int64_t;
+int inf = 0x3f3f3f3f;
+ll ll_inf = 0x3f3f3f3f3f3f3f3f;
 void solve() {
-    int n;
-    cin >> n;
-    map<int, int> a;
-    vector<int> lengths;
+    int n, m;
+    std::cin >> n;
+    std::map<int, int> cnt;
     for (int i = 0; i < n; ++i) {
-        int l, cnt;
-        cin >> l >> cnt;
-        a[l] += cnt;
-        lengths.push_back(l);
+        int x, y;
+        std::cin >> x >> y;
+        cnt[x] += y;
     }
-    sort(lengths.begin(), lengths.end());
-    lengths.erase(unique(lengths.begin(), lengths.end()), lengths.end());
 
-    auto heron = [](double a, double b, double c) {
+    auto helen = [&](int a, int b, int c) -> double {
         double p = (a + b + c) / 2.0;
-        return sqrt(p * (p - a) * (p - b) * (p - c));
+        double ans = sqrt(p * (p - a) * (p - b) * (p - c));
+        return ans;
     };
 
     double ans = -1;
-    for (auto l : lengths) {
-        int cnt = a[l];
-        if (cnt >= 2) {
-            // 尝试等边三角形
-            if (cnt >= 3) {
-                ans = max(ans, heron(l, l, l));
-            }
-            // 寻找可作为底边的长度
-            auto it = upper_bound(lengths.begin(), lengths.end(), l * 2);
-            if (it != lengths.begin()) {
-                --it;
-                if (*it == l && it != lengths.begin())
-                    --it;
-                else if (*it == l && it == lengths.begin())
-                    continue;
-                ans = max(ans, heron(l, l, *it));
-            }
-        }
+    int l = 0, r = 0;
+    for (auto [x, y] : cnt) {
+        if (y > 2) ans = std::max(ans, helen(x, x, x));
+        if (y > 1 && l) ans = std::max(ans, helen(l, x, x));
+        if (2 * r > x) ans = std::max(ans, helen(x, r, r));
+        if (y > 1) r = x;
+        if (y) l = x;
     }
-    if (ans == -1)
-        cout << -1 << ln;
-    else
-        cout << fixed << setprecision(10) << ans << ln;
+    std::cout << std::fixed << std::setprecision(10) << ans << ln;
 }
-
 signed main() {
-    ios::sync_with_stdio(false), cin.tie(nullptr);
-    int t;
-    cin >> t;
+    std::ios::sync_with_stdio(false), std::cin.tie(nullptr);
+    int t = 1;
+    std::cin >> t;
     while (t--) solve();
+    std::cin >> t;
     return 0;
 }

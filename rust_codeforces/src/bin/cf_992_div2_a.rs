@@ -67,7 +67,7 @@ fn main() {
 }
 fn solve() {
     let (n, m) = cin!(usize, usize);
-    let mut qwq = cin!([usize; n]);
+    let qwq = cin!([usize; n]);
     for i in 0..n {
         let mut flag = false;
         for j in 0..n {
