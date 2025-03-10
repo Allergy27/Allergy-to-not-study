@@ -61,13 +61,13 @@ void solve() {
     dfs(dfs, 0, initial_res, {});
 
     if (best_size == q + 1) {
-        cout << -1 << endl;
+        cout << -1 << ln;
     } else {
-        cout << best_size << endl;
+        cout << best_size << ln;
         for (int i = 0; i < best_size; ++i) {
             cout << best_ans[i] << " ";
         }
-        cout << endl;
+        cout << ln;
     }
 }
 

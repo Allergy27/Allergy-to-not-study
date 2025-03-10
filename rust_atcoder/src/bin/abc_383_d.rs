@@ -107,8 +107,8 @@ fn solve() {
         if p > n {
             break;
         }
-        for j in (i + 1)..primes.len() {
-            let r = (primes[j] as u128).pow(2);
+        for &prime_j in primes.iter().skip(i + 1) {
+            let r = (prime_j as u128).pow(2);
             if r > n {
                 break;
             }

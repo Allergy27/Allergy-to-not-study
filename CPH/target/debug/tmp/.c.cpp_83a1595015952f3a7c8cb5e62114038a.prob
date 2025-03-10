@@ -1,0 +1,1 @@
+{"name":"Local: c","url":"d:\\PrecticeContest\\cpp\\CF\\c.cpp","tests":[{"id":1737394390897,"input":"8\n3\n0 1 2\n5\n0 0 0 0 0\n5\n0 0 1 1 2\n5\n0 1 2 3 4\n5\n0 0 1 1 1\n5\n5 1 5 2 5\n1\n0\n4\n2 3 1 1\n","output":"1\n2\n3\n0\n4\n1\n2\n0\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\PrecticeContest\\cpp\\CF\\c.cpp","group":"local","local":true}

@@ -81,8 +81,7 @@ fn solve() {
                 for q in 0..m {
                     if !(i == p && j == q) && arr[i][j] == '.' && arr[p][q] == '.' {
                         let mut tmp = 0;
-                        //加湿器の位置が違う
-                        for k in 0..n {
+                        (0..n).for_each(|k| {
                             for l in 0..m {
                                 if arr[k][l] == '.'
                                     && (dis(i, j, k, l) <= d || dis(p, q, k, l) <= d)
@@ -90,8 +89,7 @@ fn solve() {
                                     tmp += 1;
                                 }
                             }
-                        }
-                        // println!("{i} {j} {p} {q} {:?} {tmp}", (arr[i][j], arr[p][q]));
+                        });
                         ans = ans.max(tmp);
                     }
                 }

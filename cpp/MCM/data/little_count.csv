@@ -1,0 +1,447 @@
+BRA,2000,Athletics,0,1,0,1,19
+BRA,2000,Basketball,0,0,1,1,1
+BRA,2000,Beach Volleyball,0,2,1,3,5
+BRA,2000,Boxing,0,0,0,0,6
+BRA,2000,Canoeing,0,0,0,0,7
+BRA,2000,Cycling,0,0,0,0,4
+BRA,2000,Diving,0,0,0,0,4
+BRA,2000,Equestrianism,0,0,1,1,12
+BRA,2000,Fencing,0,0,0,0,1
+BRA,2000,Football,0,0,0,0,33
+BRA,2000,Gymnastics,0,0,0,0,10
+BRA,2000,Handball,0,0,0,0,14
+BRA,2000,Judo,0,2,0,2,12
+BRA,2000,Rhythmic Gymnastics,0,0,0,0,6
+BRA,2000,Rowing,0,0,0,0,1
+BRA,2000,Sailing,0,1,1,2,11
+BRA,2000,Swimming,0,0,1,1,22
+BRA,2000,Synchronized Swimming,0,0,0,0,2
+BRA,2000,Table Tennis,0,0,0,0,4
+BRA,2000,Taekwondo,0,0,0,0,1
+BRA,2000,Tennis,0,0,0,0,5
+BRA,2000,Triathlon,0,0,0,0,6
+BRA,2000,Volleyball,0,0,1,1,13
+BRA,2000,Weightlifting,0,0,0,0,1
+BRA,2004,Athletics,0,0,1,1,43
+BRA,2004,Basketball,0,0,0,0,12
+BRA,2004,Beach Volleyball,1,1,0,2,6
+BRA,2004,Boxing,0,0,0,0,5
+BRA,2004,Canoeing,0,0,0,0,4
+BRA,2004,Cycling,0,0,0,0,6
+BRA,2004,Diving,0,0,0,0,5
+BRA,2004,Equestrianism,1,0,0,1,18
+BRA,2004,Fencing,0,0,0,0,3
+BRA,2004,Football,0,1,0,1,1
+BRA,2004,Gymnastics,0,0,0,0,39
+BRA,2004,Handball,0,0,0,0,30
+BRA,2004,Judo,0,0,2,2,12
+BRA,2004,Modern Pentathlon,0,0,0,0,2
+BRA,2004,Rhythmic Gymnastics,0,0,0,0,6
+BRA,2004,Rowing,0,0,0,0,4
+BRA,2004,Sailing,2,0,0,2,13
+BRA,2004,Shooting,0,0,0,0,1
+BRA,2004,Swimming,0,0,0,0,42
+BRA,2004,Synchronized Swimming,0,0,0,0,2
+BRA,2004,Table Tennis,0,0,0,0,7
+BRA,2004,Taekwondo,0,0,0,0,3
+BRA,2004,Tennis,0,0,0,0,4
+BRA,2004,Triathlon,0,0,0,0,6
+BRA,2004,Volleyball,1,0,0,1,13
+BRA,2004,Wrestling,0,0,0,0,1
+BRA,2008,Archery,0,0,0,0,1
+BRA,2008,Athletics,1,0,1,2,46
+BRA,2008,Basketball,0,0,0,0,12
+BRA,2008,Beach Volleyball,0,1,1,2,6
+BRA,2008,Boxing,0,0,0,0,6
+BRA,2008,Canoeing,0,0,0,0,3
+BRA,2008,Cycling,0,0,0,0,5
+BRA,2008,Diving,0,0,0,0,4
+BRA,2008,Equestrianism,0,0,0,0,18
+BRA,2008,Fencing,0,0,0,0,2
+BRA,2008,Football,0,1,1,2,2
+BRA,2008,Gymnastics,0,0,0,0,30
+BRA,2008,Handball,0,0,0,0,28
+BRA,2008,Judo,0,0,3,3,13
+BRA,2008,Modern Pentathlon,0,0,0,0,1
+BRA,2008,Rhythmic Gymnastics,0,0,0,0,6
+BRA,2008,Rowing,0,0,0,0,6
+BRA,2008,Sailing,0,1,1,2,10
+BRA,2008,Shooting,0,0,0,0,5
+BRA,2008,Swimming,1,0,1,2,50
+BRA,2008,Synchronized Swimming,0,0,0,0,2
+BRA,2008,Table Tennis,0,0,0,0,6
+BRA,2008,Taekwondo,0,0,1,1,3
+BRA,2008,Tennis,0,0,0,0,4
+BRA,2008,Triathlon,0,0,0,0,3
+BRA,2008,Volleyball,1,1,0,2,2
+BRA,2008,Weightlifting,0,0,0,0,1
+BRA,2008,Wrestling,0,0,0,0,1
+BRA,2012,Archery,0,0,0,0,1
+BRA,2012,Athletics,0,0,0,0,40
+BRA,2012,Basketball,0,0,0,0,23
+BRA,2012,Beach Volleyball,0,1,1,2,6
+BRA,2012,Boxing,0,1,2,3,10
+BRA,2012,Canoeing,0,0,0,0,4
+BRA,2012,Cycling,0,0,0,0,11
+BRA,2012,Diving,0,0,0,0,3
+BRA,2012,Equestrianism,0,0,0,0,16
+BRA,2012,Fencing,0,0,0,0,3
+BRA,2012,Football,0,1,0,1,17
+BRA,2012,Gymnastics,1,0,0,1,28
+BRA,2012,Handball,0,0,0,0,14
+BRA,2012,Judo,1,0,3,4,14
+BRA,2012,Modern Pentathlon,0,0,1,1,1
+BRA,2012,Rowing,0,0,0,0,4
+BRA,2012,Sailing,0,0,1,1,8
+BRA,2012,Shooting,0,0,0,0,3
+BRA,2012,Swimming,0,1,1,2,31
+BRA,2012,Synchronized Swimming,0,0,0,0,2
+BRA,2012,Table Tennis,0,0,0,0,10
+BRA,2012,Taekwondo,0,0,0,0,2
+BRA,2012,Tennis,0,0,0,0,5
+BRA,2012,Triathlon,0,0,0,0,3
+BRA,2012,Volleyball,1,1,0,2,2
+BRA,2012,Weightlifting,0,0,0,0,2
+BRA,2012,Wrestling,0,0,0,0,1
+BRA,2016,Archery,0,0,0,0,12
+BRA,2016,Athletics,1,0,0,1,72
+BRA,2016,Badminton,0,0,0,0,2
+BRA,2016,Basketball,0,0,0,0,23
+BRA,2016,Beach Volleyball,1,1,0,2,6
+BRA,2016,Boxing,1,0,0,1,9
+BRA,2016,Canoeing,0,2,1,3,17
+BRA,2016,Cycling,0,0,0,0,10
+BRA,2016,Diving,0,0,0,0,12
+BRA,2016,Equestrianism,0,0,0,0,24
+BRA,2016,Fencing,0,0,0,0,25
+BRA,2016,Football,1,0,0,1,19
+BRA,2016,Golf,0,0,0,0,3
+BRA,2016,Gymnastics,0,2,1,3,46
+BRA,2016,Handball,0,0,0,0,28
+BRA,2016,Hockey,0,0,0,0,16
+BRA,2016,Judo,1,0,2,3,14
+BRA,2016,Modern Pentathlon,0,0,0,0,2
+BRA,2016,Rhythmic Gymnastics,0,0,0,0,6
+BRA,2016,Rowing,0,0,0,0,4
+BRA,2016,Rugby Sevens,0,0,0,0,25
+BRA,2016,Sailing,1,0,0,1,14
+BRA,2016,Shooting,0,1,0,1,13
+BRA,2016,Swimming,0,0,1,1,62
+BRA,2016,Synchronized Swimming,0,0,0,0,11
+BRA,2016,Table Tennis,0,0,0,0,10
+BRA,2016,Taekwondo,0,0,1,1,4
+BRA,2016,Tennis,0,0,0,0,11
+BRA,2016,Trampolining,0,0,0,0,1
+BRA,2016,Triathlon,0,0,0,0,2
+BRA,2016,Volleyball,1,0,0,1,13
+BRA,2016,Water Polo,0,0,0,0,26
+BRA,2016,Weightlifting,0,0,0,0,5
+BRA,2016,Wrestling,0,0,0,0,5
+BRA,2020,Archery,0,0,0,0,4
+BRA,2020,Artistic Gymnastics,1,1,0,2,43
+BRA,2020,Athletics,0,0,2,2,67
+BRA,2020,Badminton,0,0,0,0,2
+BRA,2020,Beach Volleyball,0,0,0,0,8
+BRA,2020,Boxing,1,1,1,3,7
+BRA,2020,Canoe Slalom,0,0,0,0,3
+BRA,2020,Canoe Sprint,1,0,0,1,5
+BRA,2020,Cycling BMX Racing,0,0,0,0,2
+BRA,2020,Cycling Mountain Bike,0,0,0,0,3
+BRA,2020,Diving,0,0,0,0,4
+BRA,2020,Equestrian,0,0,0,0,17
+BRA,2020,Fencing,0,0,0,0,2
+BRA,2020,Football,1,0,0,1,23
+BRA,2020,Handball,0,0,0,0,31
+BRA,2020,Judo,0,0,2,2,24
+BRA,2020,Marathon Swimming,1,0,0,1,1
+BRA,2020,Modern Pentathlon,0,0,0,0,1
+BRA,2020,Rhythmic Gymnastics,0,0,0,0,5
+BRA,2020,Rowing,0,0,0,0,1
+BRA,2020,Rugby Sevens,0,0,0,0,13
+BRA,2020,Sailing,1,0,0,1,12
+BRA,2020,Shooting,0,0,0,0,1
+BRA,2020,Skateboarding,0,3,0,3,12
+BRA,2020,Surfing,1,0,0,1,4
+BRA,2020,Swimming,0,0,2,2,46
+BRA,2020,Table Tennis,0,0,0,0,10
+BRA,2020,Taekwondo,0,0,0,0,3
+BRA,2020,Tennis,0,0,1,1,7
+BRA,2020,Triathlon,0,0,0,0,3
+BRA,2020,Volleyball,0,1,0,1,13
+BRA,2020,Weightlifting,0,0,0,0,2
+BRA,2020,Wrestling,0,0,0,0,3
+BRA,2024,Archery,0,0,0,0,4
+BRA,2024,Artistic Gymnastics,1,2,1,4,39
+BRA,2024,Athletics,0,1,1,2,56
+BRA,2024,Badminton,0,0,0,0,2
+BRA,2024,Basketball,0,0,0,0,12
+BRA,2024,Beach Volleyball,1,0,0,1,7
+BRA,2024,Boxing,0,0,1,1,10
+BRA,2024,Canoe Slalom,0,0,0,0,6
+BRA,2024,Canoe Sprint,0,1,0,1,7
+BRA,2024,Cycling BMX Freestyle,0,0,0,0,1
+BRA,2024,Cycling BMX Racing,0,0,0,0,1
+BRA,2024,Cycling Mountain Bike,0,0,0,0,2
+BRA,2024,Cycling Road,0,0,0,0,2
+BRA,2024,Diving,0,0,0,0,1
+BRA,2024,Equestrian,0,0,0,0,17
+BRA,2024,Fencing,0,0,0,0,3
+BRA,2024,Football,0,1,0,1,1
+BRA,2024,Handball,0,0,0,0,17
+BRA,2024,Judo,1,1,2,4,14
+BRA,2024,Marathon Swimming,0,0,0,0,2
+BRA,2024,Marathon Swimming, Swimming,0,0,0,0,5
+BRA,2024,Modern Pentathlon,0,0,0,0,1
+BRA,2024,Rhythmic Gymnastics,0,0,0,0,6
+BRA,2024,Rowing,0,0,0,0,2
+BRA,2024,Rugby Sevens,0,0,0,0,14
+BRA,2024,Sailing,0,0,0,0,12
+BRA,2024,Shooting,0,0,0,0,4
+BRA,2024,Skateboarding,0,0,2,2,12
+BRA,2024,Surfing,0,1,1,2,6
+BRA,2024,Swimming,0,0,0,0,39
+BRA,2024,Table Tennis,0,0,0,0,12
+BRA,2024,Taekwondo,0,0,1,1,4
+BRA,2024,Tennis,0,0,0,0,10
+BRA,2024,Trampoline Gymnastics,0,0,0,0,2
+BRA,2024,Triathlon,0,0,0,0,4
+BRA,2024,Volleyball,0,0,1,1,14
+BRA,2024,Weightlifting,0,0,0,0,2
+BRA,2024,Wrestling,0,0,0,0,1
+IND,2000,Athletics,0,0,0,0,26
+IND,2000,Badminton,0,0,0,0,2
+IND,2000,Boxing,0,0,0,0,4
+IND,2000,Equestrianism,0,0,0,0,1
+IND,2000,Hockey,0,0,0,0,15
+IND,2000,Judo,0,0,0,0,1
+IND,2000,Rowing,0,0,0,0,2
+IND,2000,Shooting,0,0,0,0,4
+IND,2000,Swimming,0,0,0,0,2
+IND,2000,Table Tennis,0,0,0,0,4
+IND,2000,Tennis,0,0,0,0,5
+IND,2000,Weightlifting,0,0,1,1,3
+IND,2000,Wrestling,0,0,0,0,1
+IND,2004,Archery,0,0,0,0,12
+IND,2004,Athletics,0,0,0,0,17
+IND,2004,Badminton,0,0,0,0,3
+IND,2004,Boxing,0,0,0,0,4
+IND,2004,Hockey,0,0,0,0,16
+IND,2004,Judo,0,0,0,0,1
+IND,2004,Rowing,0,0,0,0,1
+IND,2004,Sailing,0,0,0,0,2
+IND,2004,Shooting,0,1,0,1,9
+IND,2004,Swimming,0,0,0,0,2
+IND,2004,Table Tennis,0,0,0,0,2
+IND,2004,Tennis,0,0,0,0,2
+IND,2004,Weightlifting,0,0,0,0,3
+IND,2004,Wrestling,0,0,0,0,7
+IND,2008,Archery,0,0,0,0,7
+IND,2008,Athletics,0,0,0,0,15
+IND,2008,Badminton,0,0,0,0,2
+IND,2008,Boxing,0,0,1,1,5
+IND,2008,Judo,0,0,0,0,2
+IND,2008,Rowing,0,0,0,0,3
+IND,2008,Sailing,0,0,0,0,1
+IND,2008,Shooting,1,0,0,1,15
+IND,2008,Swimming,0,0,0,0,7
+IND,2008,Table Tennis,0,0,0,0,2
+IND,2008,Tennis,0,0,0,0,5
+IND,2008,Wrestling,0,0,1,1,3
+IND,2012,Archery,0,0,0,0,12
+IND,2012,Athletics,0,0,0,0,14
+IND,2012,Badminton,0,0,1,1,6
+IND,2012,Boxing,0,0,1,1,8
+IND,2012,Hockey,0,0,0,0,16
+IND,2012,Judo,0,0,0,0,1
+IND,2012,Rowing,0,0,0,0,3
+IND,2012,Shooting,0,1,1,2,15
+IND,2012,Swimming,0,0,0,0,1
+IND,2012,Table Tennis,0,0,0,0,2
+IND,2012,Tennis,0,0,0,0,10
+IND,2012,Weightlifting,0,0,0,0,2
+IND,2012,Wrestling,0,1,1,2,5
+IND,2016,Archery,0,0,0,0,7
+IND,2016,Athletics,0,0,0,0,32
+IND,2016,Badminton,0,1,0,1,7
+IND,2016,Boxing,0,0,0,0,3
+IND,2016,Golf,0,0,0,0,3
+IND,2016,Gymnastics,0,0,0,0,5
+IND,2016,Hockey,0,0,0,0,32
+IND,2016,Judo,0,0,0,0,1
+IND,2016,Rowing,0,0,0,0,1
+IND,2016,Shooting,0,0,0,0,18
+IND,2016,Swimming,0,0,0,0,2
+IND,2016,Table Tennis,0,0,0,0,4
+IND,2016,Tennis,0,0,0,0,6
+IND,2016,Weightlifting,0,0,0,0,2
+IND,2016,Wrestling,0,0,1,1,7
+IND,2020,Archery,0,0,0,0,9
+IND,2020,Artistic Gymnastics,0,0,0,0,5
+IND,2020,Athletics,1,0,0,1,29
+IND,2020,Badminton,0,0,1,1,4
+IND,2020,Boxing,0,0,1,1,9
+IND,2020,Equestrian,0,0,0,0,1
+IND,2020,Fencing,0,0,0,0,1
+IND,2020,Golf,0,0,0,0,4
+IND,2020,Hockey,0,0,1,1,19
+IND,2020,Judo,0,0,0,0,1
+IND,2020,Rowing,0,0,0,0,2
+IND,2020,Sailing,0,0,0,0,4
+IND,2020,Shooting,0,0,0,0,24
+IND,2020,Swimming,0,0,0,0,5
+IND,2020,Table Tennis,0,0,0,0,6
+IND,2020,Tennis,0,0,0,0,3
+IND,2020,Weightlifting,0,1,0,1,1
+IND,2020,Wrestling,0,1,1,2,7
+IND,2024,Archery,0,0,0,0,14
+IND,2024,Athletics,0,1,0,1,32
+IND,2024,Badminton,0,0,0,0,7
+IND,2024,Boxing,0,0,0,0,6
+IND,2024,Equestrian,0,0,0,0,1
+IND,2024,Golf,0,0,0,0,4
+IND,2024,Hockey,0,0,1,1,1
+IND,2024,Judo,0,0,0,0,1
+IND,2024,Rowing,0,0,0,0,1
+IND,2024,Sailing,0,0,0,0,2
+IND,2024,Shooting,0,0,3,3,31
+IND,2024,Swimming,0,0,0,0,2
+IND,2024,Table Tennis,0,0,0,0,10
+IND,2024,Tennis,0,0,0,0,3
+IND,2024,Weightlifting,0,0,0,0,1
+IND,2024,Wrestling,0,0,1,1,6
+RSA,2000,Archery,0,0,0,0,2
+RSA,2000,Athletics,0,1,2,3,29
+RSA,2000,Baseball,0,0,0,0,24
+RSA,2000,Boxing,0,0,0,0,3
+RSA,2000,Canoeing,0,0,0,0,3
+RSA,2000,Cycling,0,0,0,0,4
+RSA,2000,Football,0,0,0,0,16
+RSA,2000,Hockey,0,0,0,0,16
+RSA,2000,Judo,0,0,0,0,1
+RSA,2000,Modern Pentathlon,0,0,0,0,1
+RSA,2000,Rowing,0,0,0,0,8
+RSA,2000,Sailing,0,0,0,0,2
+RSA,2000,Shooting,0,0,0,0,5
+RSA,2000,Swimming,0,1,1,2,38
+RSA,2000,Tennis,0,0,0,0,6
+RSA,2000,Triathlon,0,0,0,0,2
+RSA,2000,Wrestling,0,0,0,0,1
+RSA,2004,Archery,0,0,0,0,1
+RSA,2004,Athletics,0,2,0,2,34
+RSA,2004,Badminton,0,0,0,0,8
+RSA,2004,Beach Volleyball,0,0,0,0,4
+RSA,2004,Boxing,0,0,0,0,3
+RSA,2004,Canoeing,0,0,0,0,2
+RSA,2004,Cycling,0,0,0,0,4
+RSA,2004,Diving,0,0,0,0,2
+RSA,2004,Fencing,0,0,0,0,6
+RSA,2004,Gymnastics,0,0,0,0,5
+RSA,2004,Hockey,0,0,0,0,32
+RSA,2004,Judo,0,0,0,0,1
+RSA,2004,Rhythmic Gymnastics,0,0,0,0,1
+RSA,2004,Rowing,0,0,1,1,1
+RSA,2004,Sailing,0,0,0,0,1
+RSA,2004,Shooting,0,0,0,0,1
+RSA,2004,Swimming,1,1,1,3,14
+RSA,2004,Taekwondo,0,0,0,0,1
+RSA,2004,Triathlon,0,0,0,0,2
+RSA,2004,Wrestling,0,0,0,0,1
+RSA,2008,Archery,0,0,0,0,1
+RSA,2008,Athletics,0,1,0,1,26
+RSA,2008,Badminton,0,0,0,0,5
+RSA,2008,Beach Volleyball,0,0,0,0,2
+RSA,2008,Boxing,0,0,0,0,1
+RSA,2008,Canoeing,0,0,0,0,14
+RSA,2008,Cycling,0,0,0,0,9
+RSA,2008,Diving,0,0,0,0,1
+RSA,2008,Fencing,0,0,0,0,13
+RSA,2008,Hockey,0,0,0,0,32
+RSA,2008,Judo,0,0,0,0,3
+RSA,2008,Rhythmic Gymnastics,0,0,0,0,1
+RSA,2008,Rowing,0,0,0,0,5
+RSA,2008,Sailing,0,0,0,0,3
+RSA,2008,Shooting,0,0,0,0,2
+RSA,2008,Swimming,0,0,0,0,54
+RSA,2008,Tennis,0,0,0,0,3
+RSA,2008,Triathlon,0,0,0,0,2
+RSA,2008,Weightlifting,0,0,0,0,1
+RSA,2008,Wrestling,0,0,0,0,1
+RSA,2012,Archery,0,0,0,0,1
+RSA,2012,Athletics,0,1,0,1,22
+RSA,2012,Badminton,0,0,0,0,4
+RSA,2012,Beach Volleyball,0,0,0,0,2
+RSA,2012,Boxing,0,0,0,0,2
+RSA,2012,Canoeing,0,0,1,1,2
+RSA,2012,Cycling,0,0,0,0,10
+RSA,2012,Equestrianism,0,0,0,0,1
+RSA,2012,Football,0,0,0,0,16
+RSA,2012,Hockey,0,0,0,0,33
+RSA,2012,Judo,0,0,0,0,1
+RSA,2012,Rowing,1,0,0,1,3
+RSA,2012,Sailing,0,0,0,0,2
+RSA,2012,Shooting,0,0,0,0,1
+RSA,2012,Swimming,2,1,0,3,38
+RSA,2012,Triathlon,0,0,0,0,3
+RSA,2012,Weightlifting,0,0,0,0,1
+RSA,2016,Athletics,2,2,0,4,40
+RSA,2016,Badminton,0,0,0,0,1
+RSA,2016,Canoeing,0,0,0,0,2
+RSA,2016,Cycling,0,0,0,0,8
+RSA,2016,Diving,0,0,0,0,1
+RSA,2016,Equestrianism,0,0,0,0,1
+RSA,2016,Football,0,0,0,0,34
+RSA,2016,Golf,0,0,0,0,4
+RSA,2016,Gymnastics,0,0,0,0,6
+RSA,2016,Judo,0,0,0,0,1
+RSA,2016,Rowing,0,1,0,1,11
+RSA,2016,Rugby Sevens,0,0,1,1,1
+RSA,2016,Sailing,0,0,0,0,3
+RSA,2016,Swimming,0,3,0,3,25
+RSA,2016,Triathlon,0,0,1,1,4
+RSA,2020,Artistic Gymnastics,0,0,0,0,10
+RSA,2020,Artistic Swimming,0,0,0,0,2
+RSA,2020,Athletics,0,0,0,0,40
+RSA,2020,Cycling BMX Racing,0,0,0,0,1
+RSA,2020,Cycling Mountain Bike,0,0,0,0,2
+RSA,2020,Cycling Road,0,0,0,0,7
+RSA,2020,Cycling Track,0,0,0,0,5
+RSA,2020,Diving,0,0,0,0,2
+RSA,2020,Equestrian,0,0,0,0,1
+RSA,2020,Football,0,0,0,0,19
+RSA,2020,Golf,0,0,0,0,2
+RSA,2020,Hockey,0,0,0,0,36
+RSA,2020,Judo,0,0,0,0,1
+RSA,2020,Marathon Swimming,0,0,0,0,2
+RSA,2020,Rowing,0,0,0,0,6
+RSA,2020,Rugby Sevens,0,0,0,0,13
+RSA,2020,Sailing,0,0,0,0,3
+RSA,2020,Skateboarding,0,0,0,0,3
+RSA,2020,Sport Climbing,0,0,0,0,2
+RSA,2020,Surfing,0,1,0,1,1
+RSA,2020,Swimming,1,1,0,2,24
+RSA,2020,Triathlon,0,0,0,0,3
+RSA,2020,Water Polo,0,0,0,0,26
+RSA,2024,Archery,0,0,0,0,1
+RSA,2024,Artistic Gymnastics,0,0,0,0,6
+RSA,2024,Athletics,0,2,0,2,37
+RSA,2024,Badminton,0,0,0,0,1
+RSA,2024,Canoe Sprint,0,0,0,0,8
+RSA,2024,Cycling BMX Freestyle,0,0,0,0,1
+RSA,2024,Cycling BMX Racing,0,0,0,0,1
+RSA,2024,Cycling Mountain Bike,0,0,1,1,2
+RSA,2024,Cycling Road,0,0,0,0,3
+RSA,2024,Cycling Track,0,0,0,0,2
+RSA,2024,Diving,0,0,0,0,1
+RSA,2024,Equestrian,0,0,0,0,1
+RSA,2024,Fencing,0,0,0,0,1
+RSA,2024,Golf,0,0,0,0,4
+RSA,2024,Hockey,0,0,0,0,33
+RSA,2024,Judo,0,0,0,0,1
+RSA,2024,Rowing,0,0,0,0,3
+RSA,2024,Rugby Sevens,0,0,1,1,14
+RSA,2024,Skateboarding,0,0,0,0,3
+RSA,2024,Sport Climbing,0,0,0,0,4
+RSA,2024,Surfing,0,0,0,0,3
+RSA,2024,Swimming,1,1,0,2,12
+RSA,2024,Triathlon,0,0,0,0,3
+RSA,2024,Wrestling,0,0,0,0,1

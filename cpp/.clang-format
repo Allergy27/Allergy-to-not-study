@@ -27,7 +27,7 @@ AllowShortIfStatementsOnASingleLine:	true
 # 允许短的循环保持在同一行
 AllowShortLoopsOnASingleLine: true
 # 每行字符的限制，0表示没有限制
-ColumnLimit: 0
+ColumnLimit: 120
 # 在尾随的评论前添加的空格数(只适用于//)
 SpacesBeforeTrailingComments: 2
 # 缩进case标签

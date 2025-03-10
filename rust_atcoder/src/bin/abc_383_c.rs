@@ -76,14 +76,14 @@ fn solve() {
     let mut vis = std::collections::HashSet::new();
 
     // 寻找所有的加湿器 (H) 位置
-    for i in 0..h {
+    (0..h).for_each(|i| {
         for j in 0..w {
             if qwq[i][j] == 'H' {
                 que.push_back((i, j, 0)); // 加入 (x, y, 距离)
                 vis.insert((i, j)); // 标记为已访问
             }
         }
-    }
+    });
 
     let way = [(-1, 0), (1, 0), (0, -1), (0, 1)];
     while let Some((x, y, dist)) = que.pop_front() {

@@ -1,0 +1,1 @@
+{"name":"Local: c","url":"d:\\PrecticeContest\\rust_codeforces\\src\\bin\\c.py","tests":[{"id":1737549679437,"input":"3\n2\n1 2\n4\n1 2\n2 3\n2 4\n7\n1 2\n1 3\n2 4\n4 5\n5 6\n5 7\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\PrecticeContest\\rust_codeforces\\src\\bin\\c.py","group":"local","local":true}
