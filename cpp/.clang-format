@@ -32,5 +32,6 @@ ColumnLimit: 120
 SpacesBeforeTrailingComments: 2
 # 缩进case标签
 IndentCaseLabels: false
-
+# 修饰符缩进为1
+AccessModifierOffset: -3
 PointerBindsToType: false

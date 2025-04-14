@@ -1,0 +1,1 @@
+{"name":"Local: h","url":"d:\\PrecticeContest\\cpp\\BlueBrige\\25.4.7\\h.cpp","tests":[{"id":1744012069916,"input":"8 10\n1 2 1\n1 3 1\n1 4 1\n1 5 1\n2 6 1\n3 6 1\n4 7 1\n5 7 1\n6 8 1\n7 8 1\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\PrecticeContest\\cpp\\BlueBrige\\25.4.7\\h.cpp","group":"local","local":true}
