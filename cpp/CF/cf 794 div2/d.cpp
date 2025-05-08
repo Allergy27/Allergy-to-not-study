@@ -19,28 +19,57 @@ void solve() {
     std::string s;
     std::cin >> s;
     int n = s.size();
-    std::set<int> ab, ba;
-    int cnta = s[0] == 'A', cntb = s[0] == 'B';
-    for (int i = 1; i < n; ++i) {
-        if (s[i] == 'B' && s[i - 1] == 'A') ab.insert(i - 1);
-        if (s[i] == 'A' && s[i - 1] == 'B') ba.insert(i - 1);
-        if (s[i] == 'A') ++cnta;
-        if (s[i] == 'B') ++cntb;
+    std::vector<int> ab, ba, odd;
+
+    if (std::count(s.begin(), s.end(), 'A') != a + c + d || std::count(s.begin(), s.end(), 'B') != b + c + d) {
+        std::cout << "No" << ln;
+        return;
     }
-    int conab = 0, conba = 0;
-    for (auto x : ab) {
-        if (ba.find(x + 1) != ba.end()) ++conab;
+
+    int cnt_ab = 0, cnt_ba = 0;
+    for (int i = 0; i < n; ++i) {
+        int j = i;
+        while (j + 1 < n && s[j] != s[j + 1]) ++j;
+        int len = j - i + 1;
+        if (len & 1) {
+            odd.emplace_back(len / 2);
+        } else {
+            if (s[i] == 'A')
+                ab.emplace_back(len / 2), cnt_ab += len / 2;
+            else
+                ba.emplace_back(len / 2), cnt_ba += len / 2;
+        }
+        i = j;
     }
-    for (auto x : ba) {
-        if (ab.find(x + 1) != ab.end()) ++conba;
+
+    for (auto x : odd) {
+        int tmp = std::min(std::max(0LL, c - cnt_ab), x);
+        cnt_ab += tmp;
+        cnt_ba += x - tmp;
     }
-    if (conab == 0 && conba == 0) {
-        if (cnta - c - d == a && cntb - c - d == b)
-            std::cout << "Yes" << ln;
-        else
-            std::cout << "No" << ln;
-    } else {
+
+    std::sort(ab.begin(), ab.end(), std::greater<int>());
+    std::sort(ba.begin(), ba.end(), std::greater<int>());
+
+    for (int x : ba) {
+        if (cnt_ba > d) {
+            int tmp = std::min(--cnt_ba - d, --x);
+            cnt_ba -= tmp;
+            cnt_ab += tmp;
+        }
     }
+    for (int x : ab) {
+        if (cnt_ab > c) {
+            int tmp = std::min(--cnt_ab - c, --x);
+            cnt_ab -= tmp;
+            cnt_ba += tmp;
+        }
+    }
+
+    if (cnt_ab >= c && cnt_ba >= d)
+        std::cout << "Yes" << ln;
+    else
+        std::cout << "No" << ln;
 }
 
 signed main() {

@@ -57,5 +57,22 @@ fn main() {
     (0..t).for_each(|_| solve());
 }
 fn solve() {
-    println!("Hello_Rust!")
+    let gcd = |mut a, mut b| loop {
+        if b == 0 {
+            break a;
+        }
+        (a, b) = (b, a % b)
+    };
+    let d = |x| {
+        let y = (1..=x).sum::<i32>();
+        let g = gcd(x, y);
+        println!("{}/{}", y / g, x / g);
+    };
+    d(6);
+    d(8);
+    for i in 0..=18 {
+        let p = 16400 - 41 * i * i;
+        let q = 6400 - 320 * i;
+        println!("{i}, {}", p / q);
+    }
 }

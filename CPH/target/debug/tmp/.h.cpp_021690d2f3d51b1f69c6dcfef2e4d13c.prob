@@ -1,1 +1,0 @@
-{"name":"Local: h","url":"d:\\PrecticeContest\\cpp\\CF\\cf 1017 div4\\h.cpp","tests":[{"id":1744604606965,"input":"2\n5 3\n2 3 5 7 11\n2 1 5\n2 2 4\n2310 1 5\n4 3\n18 12 8 9\n216 1 2\n48 2 4\n82944 1 4\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\PrecticeContest\\cpp\\CF\\cf 1017 div4\\h.cpp","group":"local","local":true}

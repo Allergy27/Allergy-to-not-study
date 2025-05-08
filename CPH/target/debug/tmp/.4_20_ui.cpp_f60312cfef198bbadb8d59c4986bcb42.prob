@@ -1,0 +1,1 @@
+{"name":"Local: 4_20_ui","url":"d:\\PrecticeContest\\cpp\\otherone\\4_20_ui.cpp","tests":[{"id":1745153141210,"input":"5 7\n1 1 0\n1 2 0\n2 2 1\n3 3 1\n3 4 0\n4 4 1\n5 5 0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\PrecticeContest\\cpp\\otherone\\4_20_ui.cpp","group":"local","local":true}

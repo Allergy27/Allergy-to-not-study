@@ -16,9 +16,9 @@ ll ll_inf = 0x3f3f3f3f3f3f3f3f;
 void solve() {
     int n;
     std::cin >> n;
-    std::vector<int> qwq(n);
     int max = -inf, flag = 0;
-    for (auto &x : qwq) {
+    while (n--) {
+        int x;
         std::cin >> x;
         max = std::max(max, x);
         if (x < 0) flag = 1;
