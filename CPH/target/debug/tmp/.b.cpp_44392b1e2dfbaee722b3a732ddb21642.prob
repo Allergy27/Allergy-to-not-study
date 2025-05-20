@@ -1,1 +1,0 @@
-{"name":"Local: b","url":"d:\\PrecticeContest\\cpp\\CF\\cf 1022 div2\\b.cpp","tests":[{"id":1746593545259,"input":"8\n2 1\n3 6\n1 0\n2 0\n5 0\n2 27\n15 43\n12345678 9101112\n","output":"5\n8\n-1\n2\n8\n27\n55\n21446778\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\PrecticeContest\\cpp\\CF\\cf 1022 div2\\b.cpp","group":"local","local":true}
