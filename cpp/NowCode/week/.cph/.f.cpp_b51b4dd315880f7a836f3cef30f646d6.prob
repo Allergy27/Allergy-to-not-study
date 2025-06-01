@@ -1,1 +1,0 @@
-{"name":"Local: f","url":"d:\\Prectice_Contest\\cpp\\NowCode\\week\\f.cpp","tests":[{"id":1731240629080,"input":"5\n1 2 3\n1 3 5\n2 4 2\n2 5 1\n3\n1 2\n2 1\n3 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Prectice_Contest\\cpp\\NowCode\\week\\f.cpp","group":"local","local":true}
