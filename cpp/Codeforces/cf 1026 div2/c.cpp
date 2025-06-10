@@ -23,7 +23,6 @@ int main(){
                 stk.push(i);
             else
                 nl += qwq[i];
-            
 
             auto [x, y] = h[i];
             while(nl < x){

@@ -16,9 +16,9 @@
  */
 #include<bits/stdc++.h>
 
-using lll = __int128;
+using i128 = __int128;
 
-std::ostream &operator<<(std::ostream &os, lll n){
+std::ostream &operator<<(std::ostream &os, i128 n){
     if(n == 0) return os << 0;
     std::string s;
     while(n > 0) s += static_cast<char>('0' + n % 10), n /= 10;
@@ -26,16 +26,16 @@ std::ostream &operator<<(std::ostream &os, lll n){
     return os << s;
 }
 
-lll tolll(const std::string &s){
-    lll n = 0;
+i128 toi128(const std::string &s){
+    i128 n = 0;
     for(auto c : s) n = n * 10 + (c - '0');
     return n;
 }
 
-lll sqrtlll(lll n){
-    lll lo = 0, hi = 1e16;
+i128 sqrti128(i128 n){
+    i128 lo = 0, hi = 1e16;
     while(lo < hi){
-        lll x = (lo + hi + 1) / 2;
+        i128 x = (lo + hi + 1) / 2;
         if(x * x <= n){
             lo = x;
         }else{
@@ -45,7 +45,7 @@ lll sqrtlll(lll n){
     return lo;
 }
 
-lll gcd(lll a, lll b){
+i128 gcd(i128 a, i128 b){
     while(b){
         a %= b;
         std::swap(a, b);

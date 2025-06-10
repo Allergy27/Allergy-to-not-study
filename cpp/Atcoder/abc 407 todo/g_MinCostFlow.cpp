@@ -25,8 +25,6 @@ using PII = std::pair<int, int>;
 const int inf = 0x3f3f3f3f;
 const int ll_inf = 0x3f3f3f3f3f3f3f3f;
         
-const int offset = 2e12;
-
 template<class T>
 struct MinCostFlow{
     struct Edge {
@@ -98,7 +96,7 @@ struct MinCostFlow{
             std::fill(ptr.begin(), ptr.end(), 0);
             while(T x = dfs(s, t, INF)){
                 ans += x ;
-                cost = std::min(cost, ret - ans * offset);
+                cost = std::min(cost, ret);
             }
         }
         return {ans, cost};
@@ -124,12 +122,12 @@ signed main(){
         for(int i = 0; i < n; ++i)
             for(int j = 0; j + 1 < m ; ++j)
                 if(qwq[i][j] + qwq[i][j + 1] < 0){
-                    g.add(1 + i * m + j + ((i ^ j) & 1), 1 + i * m + j + !((i ^ j) & 1), 1, qwq[i][j] + qwq[i][j + 1] + offset);
+                    g.add(1 + i * m + j + ((i ^ j) & 1), 1 + i * m + j + !((i ^ j) & 1), 1, qwq[i][j] + qwq[i][j + 1]);
                 }
         for(int i = 0; i + 1 < n; ++i)
             for(int j = 0; j < m; ++j)
                 if(qwq[i][j] + qwq[i + 1][j] < 0){
-                    g.add(1 + (i + ((i ^ j) & 1)) * m + j, 1 + (i + !((i ^ j) & 1)) * m + j, 1, qwq[i][j] + qwq[i + 1][j] + offset);
+                    g.add(1 + (i + ((i ^ j) & 1)) * m + j, 1 + (i + !((i ^ j) & 1)) * m + j, 1, qwq[i][j] + qwq[i + 1][j]);
                 }           
         for(int i = 0; i < n; ++i)
             for(int j = 0; j < m ; ++j)
